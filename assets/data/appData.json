@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Genshin Impact",
+    "logoUrl": "https://example.com/logos/genshin.png",
+    "trailerUrl": "https://youtube.com/watch?v=GI-trailer",
+    "publisher": "HoYoverse",
+    "costType": "Miễn phí (In-app purchases)",
+    "rating": 4.5,
+    "downloads": "100M+"
+  },
+  {
+    "id": 2,
+    "name": "Candy Crush Saga",
+    "logoUrl": "https://example.com/logos/candycrush.png",
+    "trailerUrl": "https://youtube.com/watch?v=CC-trailer",
+    "publisher": "King",
+    "costType": "Miễn phí (In-app purchases)",
+    "rating": 4.6,
+    "downloads": "1B+"
+  },
+  {
+    "id": 3,
+    "name": "YouTube",
+    "logoUrl": "https://example.com/logos/youtube.png",
+    "trailerUrl": null,
+    "publisher": "Google LLC",
+    "costType": "Miễn phí (Ads & Subscriptions)",
+    "rating": 4.1,
+    "downloads": "5B+"
+  },
+  {
+    "id": 4,
+    "name": "Minecraft",
+    "logoUrl": "https://example.com/logos/minecraft.png",
+    "trailerUrl": "https://youtube.com/watch?v=MC-trailer",
+    "publisher": "Mojang",
+    "costType": "Có phí",
+    "rating": 4.5,
+    "downloads": "10M+"
+  },
+  {
+    "id": 5,
+    "name": "Spotify: Music and Podcasts",
+    "logoUrl": "https://example.com/logos/spotify.png",
+    "trailerUrl": null,
+    "publisher": "Spotify AB",
+    "costType": "Miễn phí (Ads & Premium)",
+    "rating": 4.4,
+    "downloads": "500M+"
+  },
+  {
+    "id": 6,
+    "name": "Call of Duty: Mobile",
+    "logoUrl": "https://example.com/logos/cod.png",
+    "trailerUrl": "https://youtube.com/watch?v=COD-trailer",
+    "publisher": "Activision Publishing, Inc.",
+    "costType": "Miễn phí (In-app purchases)",
+    "rating": 4.3,
+    "downloads": "300M+"
+  },
+  {
+    "id": 7,
+    "name": "Tasker",
+    "logoUrl": "https://example.com/logos/tasker.png",
+    "trailerUrl": "https://youtube.com/watch?v=Tasker-guide",
+    "publisher": "joaomgcd",
+    "costType": "Có phí",
+    "rating": 4.8,
+    "downloads": "1M+"
+  },
+  {
+    "id": 8,
+    "name": "CapCut - Video Editor",
+    "logoUrl": "https://example.com/logos/capcut.png",
+    "trailerUrl": null,
+    "publisher": "Bending Spoons",
+    "costType": "Miễn phí",
+    "rating": 4.5,
+    "downloads": "500M+"
+  },
+  {
+    "id": 9,
+    "name": "Duolingo: Learn Languages",
+    "logoUrl": "https://example.com/logos/duolingo.png",
+    "trailerUrl": null,
+    "publisher": "Duolingo",
+    "costType": "Miễn phí (Premium subscription)",
+    "rating": 4.7,
+    "downloads": "100M+"
+  },
+  {
+    "id": 10,
+    "name": "Pocket Casts",
+    "logoUrl": "https://example.com/logos/pocketcasts.png",
+    "trailerUrl": null,
+    "publisher": "Automattic, Inc.",
+    "costType": "Miễn phí (Plus subscription)",
+    "rating": 4.6,
+    "downloads": "1M+"
+  }
+]
