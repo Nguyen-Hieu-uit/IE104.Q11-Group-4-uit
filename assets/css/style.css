@@ -4762,3 +4762,37 @@ svg {
     margin: 0 15px;
   }
 }
+
+.footer__section-title,
+.footer__link-text {
+  font-family: "Google Sans", Helvetica, Arial, sans-serif;
+  color: rgb(95, 99, 104);
+  fill: rgb(95, 99, 104);
+  stop-color: rgb(95, 99, 104);
+}
+
+.footer__section-title {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.0178571429em;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.footer__section-title:not(:disabled),
+.footer__link-text:not(:disabled) {
+  color: rgb(95, 99, 104);
+}
+
+.footer__link-text {
+  font-size: 0.875rem;
+  letter-spacing: 0.0142857143em;
+  line-height: 1.25rem;
+  font-weight: 400;
+  width: max-content;
+}
+
+.footer__section-title,
+.footer__link-text {
+  line-height: 32px;
+}
