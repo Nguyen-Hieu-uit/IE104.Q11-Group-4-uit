@@ -1,9 +1,9 @@
 {
     "apps": [
         {
-            "title": "Dịch vụ của Google Play",
-            "developer": "Google LLC",
-            "icon": "https://play-lh.googleusercontent.com/f6ZSUJrtL5uniwWCTp1OeJj8MdoDaSTqi2XFyy9A0yPv6DpBo2giisRKDpXD9qk66KE=s128-rw"
+            "title": "Facebook",
+            "developer": "Meta Platforms, Inc.",
+            "icon": "https://play-lh.googleusercontent.com/KCMTYuiTrKom4Vyf0G4foetVOwhKWzNbHWumV73IXexAIy5TTgZipL52WTt8ICL-oIo=w480-h960-rw"
         }
     ],
     "games": [
@@ -14,11 +14,6 @@
         }
     ],
     "favorites": [
-        {
-            "title": "Dịch vụ của Google Play",
-            "developer": "Google LLC",
-            "icon": "https://play-lh.googleusercontent.com/f6ZSUJrtL5uniwWCTp1OeJj8MdoDaSTqi2XFyy9A0yPv6DpBo2giisRKDpXD9qk66KE=s128-rw"
-        },
         {
             "title": "Plague Inc.",
             "developer": "Ndemic Creations",
