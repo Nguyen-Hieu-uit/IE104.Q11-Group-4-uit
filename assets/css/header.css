@@ -344,5 +344,11 @@
 }
 
 .header-actions .search__box {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
+}
+
+@media screen and (max-width: 400px) {
+  .header__logo-link span {
+    display: none;
+  }
 }
