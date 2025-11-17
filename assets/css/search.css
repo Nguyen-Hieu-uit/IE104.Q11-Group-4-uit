@@ -3,6 +3,27 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Đảm bảo tên ứng dụng trong kết quả search dùng Roboto */
+.app-name,
+.app-identity__meta,
+.publisher-display,
+.cost-type-display,
+.rating-inline,
+.app-identity__stats-bar,
+.app-identity-stats-bar__content {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Ép toàn bộ text trong footer của trang search dùng Roboto */
+.footer,
+.footer * {
+  font-family: Roboto, Arial, sans-serif;
+}
+
 a:visited {
   color: initial;
 }
@@ -133,15 +154,9 @@ section {
 .nav {
   align-items: center;
   display: flex;
-  height: 56px;
+  height: 64px;
   width: 100%;
 }
-
-/* @media screen and (min-width: 840px) {
-  .nav {
-    height: 64px;
-  }
-} */
 
 /* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
 @media screen and (max-width: 950px) {
@@ -157,7 +172,7 @@ section {
   }
 
   .header-actions {
-    margin-left: auto;
+    /* margin-left: auto; */
   }
 
   .navigation-tabs {
@@ -365,6 +380,21 @@ section {
   width: 40px;
 }
 
+/* Logo ảnh trong header (thay cho SVG cũ) */
+.header__logo-link img {
+  margin-right: 8px;
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+/* Ẩn chữ "App Market" cạnh logo trên màn hình nhỏ để tiết kiệm không gian */
+@media screen and (max-width: 600px) {
+  .header__logo-link span[aria-hidden="true"] {
+    display: none;
+  }
+}
+
 button {
   background: transparent;
   border: 0;
@@ -379,7 +409,6 @@ button {
 /* oc9n0c */
 .header-actions {
   align-items: center;
-  display: flex 0;
   margin: 0 10px 0 auto;
 }
 
@@ -448,6 +477,7 @@ button {
     margin-top: 156px;
   }
 }
+
 .no-results,
 .result-count,
 .search-title {
@@ -485,12 +515,6 @@ button {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px 20px;
 }
-
-/* @media screen and (max-width: 600px) {
-  .results-list {
-    width: 90%;
-  }
-} */
 
 .result-item-featured {
   display: flex;
@@ -605,13 +629,9 @@ button {
   display: flex;
   overflow: auto hidden;
   width: 100%;
+  padding-bottom: 4px;
+  padding-left: 4px;
 }
-
-/* @media screen and (min-width: 600px) {
-  .app-identity-stats-bar__content {
-    justify-content: flex-start;
-  }
-} */
 
 .result-item-featured .app-overview {
   width: 48%;

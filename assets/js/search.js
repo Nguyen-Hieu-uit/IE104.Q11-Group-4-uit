@@ -1,6 +1,6 @@
 // Hàm tải dữ liệu từ file JSON và hiển thị kết quả tìm kiếm
 function loadAppData() {
-  const jsonFilePath = "../assets/data/appData.json";
+  const jsonFilePath = "./assets/json/appData.json";
 
   fetch(jsonFilePath)
     .then((response) => {
