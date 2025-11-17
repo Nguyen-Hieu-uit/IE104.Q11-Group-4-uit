@@ -105,7 +105,10 @@ function displayResults(allApps) {
 
 // --- HÀM HỖ TRỢ: TẠO THẺ KẾT QUẢ ---
 function createResultItem(app, query, isFeatured) {
-  const item = document.createElement("div");
+  const item = document.createElement("a");
+
+  // Đường dẫn chi tiết app (tạm thời fix cứng Candy Crush)
+  item.href = "./assets/html/candy-crush-saga.html";
 
   // Gán class khác nhau dựa trên tham số isFeatured
   if (isFeatured) {
@@ -217,11 +220,6 @@ function createResultItem(app, query, isFeatured) {
     </div>
     ${trailerSection}
     `;
-
-  // Khi người dùng nhấn vào toàn bộ vùng của result (featured hoặc plain), chuyển đến trang chi tiết
-  item.addEventListener("click", () => {
-    window.location.href = "../apps/candy-crush-saga.html";
-  });
 
   return item;
 }
