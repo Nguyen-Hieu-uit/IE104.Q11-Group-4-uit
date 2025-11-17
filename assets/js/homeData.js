@@ -123,7 +123,7 @@ const pcGamesRow = [
     rating: 4.4,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
   {
     name: "Hades' Star",
@@ -132,7 +132,7 @@ const pcGamesRow = [
     rating: 4.4,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
   {
     name: "Hades' Star",
@@ -141,7 +141,7 @@ const pcGamesRow = [
     rating: 4.4,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
   {
     name: "Hades' Star",
@@ -150,7 +150,7 @@ const pcGamesRow = [
     rating: 4.4,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
 ];
 
@@ -162,7 +162,7 @@ const featuredGames = [
     rating: 4.4,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
   {
     name: "Another Strategy Game",
@@ -170,7 +170,7 @@ const featuredGames = [
     rating: 4.2,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
   {
     name: "Space Adventure",
@@ -178,7 +178,7 @@ const featuredGames = [
     rating: 4.3,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
   {
     name: "Casual Puzzle",
@@ -186,6 +186,6 @@ const featuredGames = [
     rating: 4.0,
     thumb: "https://i.ytimg.com/vi/QGD-WEqo_bQ/hqdefault.jpg",
     icon: "https://play-lh.googleusercontent.com/_VRSZ4h_Dcadat9mQAC33JhgL3UC1T5eCykBIOAVyPhfD_RhnNK6fXP9_6N09C8YQHg=s64-rw",
-    href: "./candy-crush-saga.html",
+    href: "/html/candy-crush-saga.html",
   },
 ];
