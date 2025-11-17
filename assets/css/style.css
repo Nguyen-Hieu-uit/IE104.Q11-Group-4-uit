@@ -3,6 +3,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+  font-family: "Google Sans", Roboto, Arial, sans-serif !important;
+}
+
 a:visited {
   color: initial;
 }
