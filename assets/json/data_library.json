@@ -1,0 +1,43 @@
+{
+    "apps": [
+        {
+            "title": "Facebook",
+            "developer": "Meta Platforms, Inc.",
+            "icon": "https://play-lh.googleusercontent.com/KCMTYuiTrKom4Vyf0G4foetVOwhKWzNbHWumV73IXexAIy5TTgZipL52WTt8ICL-oIo=w480-h960-rw"
+        }
+    ],
+    "games": [
+        {
+            "title": "Plague Inc.",
+            "developer": "Ndemic Creations",
+            "icon": "https://play-lh.googleusercontent.com/AhhhI8JGijtKuO8xOP_qUzOvIk7R7xBIKALKW_P7DV7jzWtvo2LrfC0081XMc85NGeBK=s128-rw"
+        }
+    ],
+    "favorites": [
+        {
+            "title": "Plague Inc.",
+            "developer": "Ndemic Creations",
+            "icon": "https://play-lh.googleusercontent.com/AhhhI8JGijtKuO8xOP_qUzOvIk7R7xBIKALKW_P7DV7jzWtvo2LrfC0081XMc85NGeBK=s128-rw"
+        }
+    ],
+    "devices": [
+        {
+            "name": "PC1",
+            "visibility": true,
+            "manufacturer": "Google",
+            "model": "HPE device",
+            "carrier": "No carrier",
+            "lastUsed": "14 tháng 3, 2025",
+            "registered": "14 tháng 3, 2025"
+        },
+        {
+            "name": "Android1",
+            "visibility": false,
+            "manufacturer": "Samsung",
+            "model": "SM-N986B",
+            "carrier": "Viettel",
+            "lastUsed": "Hôm nay",
+            "registered": "20 tháng 1, 2024"
+        }
+    ]
+}
