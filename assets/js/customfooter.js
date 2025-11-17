@@ -1,34 +1,22 @@
 class CustomFooter extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        // Thêm HTML trực tiếp vào component
-        this.innerHTML = `
+    // Thêm HTML trực tiếp vào component
+    this.innerHTML = `
             <link rel="stylesheet" href="../assets/css/style.css">
 
             <footer class="footer">
                 <div class="footer__divider"></div>
                 <div class="footer__sections">
 
-                    <div ssk="11:Google Play">
+                    <div ssk="11:App Market">
                         <section>
-                            <span class="footer__section-title">Google Play</span>
-
-                            <div ssk="22:/store/pass/getstarted">
-                                <a href="/store/pass/getstarted" target="_blank" jslog="197536; 1:3121|qgIF0gECEAE=; track:click;" class="footer__link">
-                                    <p class="footer__link-text">Play Pass</p>
-                                </a>
-                            </div>
-
-                            <div ssk="20:/store/points/enroll">
-                                <a href="/store/points/enroll" target="_blank" jslog="197536; 1:3121|qgIF0gECEAI=; track:click;" class="footer__link">
-                                    <p class="footer__link-text">Điểm Play</p>
-                                </a>
-                            </div>
+                            <span class="footer__section-title">App Market</span>
 
                             <div ssk="39:https://play.google.com/about/giftcards">
                                 <a href="https://play.google.com/about/giftcards" target="_blank" jslog="197536; 1:3121|qgIF0gECEAM=; track:click;" class="footer__link">
-                                    <p class="footer__link-text">Thẻ Google Play</p>
+                                    <p class="footer__link-text">Thẻ App Market</p>
                                 </a>
                             </div>
 
@@ -82,19 +70,13 @@ class CustomFooter extends HTMLElement {
 
                     <div class="footer__bottom-item" ssk="51:https://support.google.com/googleplay/?p=about_play">
                         <a href="https://support.google.com/googleplay/?p=about_play" target="_blank" jslog="197536; 1:3121; track:click;" class="footer__link">
-                            <p class="footer__bottom-item">Giới thiệu về Google Play</p>
+                            <p class="footer__bottom-item">Giới thiệu về App Market</p>
                         </a>
                     </div>
 
                     <div class="footer__bottom-item" ssk="39:http://developer.android.com/index.html">
                         <a href="http://developer.android.com/index.html" target="_blank" jslog="197536; 1:3121; track:click;" class="footer__link">
                             <p class="footer__bottom-item">Nhà phát triển</p>
-                        </a>
-                    </div>
-
-                    <div class="footer__bottom-item" ssk="43:https://store.google.com/?playredirect=true">
-                        <a href="https://store.google.com/?playredirect=true" target="_blank" jslog="197536; 1:3121; track:click;" class="footer__link">
-                            <p class="footer__bottom-item">Google Store</p>
                         </a>
                     </div>
 
@@ -107,7 +89,7 @@ class CustomFooter extends HTMLElement {
                 </div>
             </footer>
         `;
-    }
+  }
 }
 
-customElements.define('custom-footer', CustomFooter);
+customElements.define("custom-footer", CustomFooter);
