@@ -118,7 +118,7 @@ function handleTabSwitch(event) {
 
 // 3. Load data và thiết lập listener khi DOM đã tải xong
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("data_library.json")
+    fetch("../assets/json/data_library.json")
         .then(response => response.json())
         .then(data => {
             libraryData = data;

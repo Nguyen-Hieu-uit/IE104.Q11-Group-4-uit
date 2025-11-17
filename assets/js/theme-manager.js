@@ -8,10 +8,10 @@ let particleContainer = null;
 function getSeasonalEffect() {
     const now = new Date();
     const month = now.getMonth();
-    if (month >= 2 && month <= 4) return { type: 'spring', image: 'petal.svg' };
-    if (month >= 5 && month <= 7) return { type: 'summer', image: 'leaf.svg' };
-    if (month >= 8 && month <= 10) return { type: 'autumn', image: 'autumn-leaf.svg' };
-    if (month === 11 || month === 0 || month === 1) return { type: 'snow', image: 'snow.svg' };
+    if (month >= 2 && month <= 4) return { type: 'spring', image: '/assets/logo/petal.svg' };
+    if (month >= 5 && month <= 7) return { type: 'summer', image: '/assets/logo/leaf.svg' };
+    if (month >= 8 && month <= 10) return { type: 'autumn', image: '/assets/logo/autumn-leaf.svg' };
+    if (month === 11 || month === 0 || month === 1) return { type: 'snow', image: 'assets/logo/snow.svg' };
     return { type: 'spring', image: 'petal.svg' };
 }
 

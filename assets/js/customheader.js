@@ -6,32 +6,32 @@ class CustomHeader extends HTMLElement {
 
         // Thêm HTML trực tiếp vào component
         this.innerHTML = `
-            <link rel="stylesheet" href="../assets/css/style.css">
-            <link rel="stylesheet" href="SettingTab.css">
+            <link rel="stylesheet" href="/assets/css/style.css">
+            <link rel="stylesheet" href="/assets/css/SettingTab.css">
 
             <header class="header">
     <nav class="nav">
-        <a href="./index.html" aria-label="Biểu trưng của App Market" class="header__logo-link">
-            <img src="./assets/logo/logo.png" alt="App Market logo" />
+        <a href="/index.html" aria-label="Biểu trưng của App Market" class="header__logo-link">
+            <img src="/assets/logo/logo.png" alt="App Market logo" />
             <span aria-hidden="true">App Market</span>
         </a>
 
         <span class="navigation-tabs"><a role="tab"
                 class="nav-tab nav-tab-selected nav-tab--auto-width nav-tab--styled FEsNhd YmRZ5d" aria-selected="true"
-                tabindex="0" id="11" href="./index.html">
+                tabindex="0" id="11" href="/index.html">
                 <span class="nav-tab__inner"><span class="nav-tab__label">Trò chơi</span><span
                         class="nav-tab__indicator-wrapper nav-tab__indicator-wrapper-selected nav-tab__indicator-border kte1hc"><span
                             class="nav-tab__indicator nav-tab__indicator-format indicator-length"></span></span></span>
                 <div class="VfPpkd-wJCpie-LhBDec"></div>
             </a><a role="tab" class="nav-tab nav-tab--auto-width nav-tab--styled FEsNhd YmRZ5d q2wkXd"
-                aria-selected="true" tabindex="-1" id="1" href="./app_nav.html">
+                aria-selected="true" tabindex="-1" id="1" href="/html/app_nav.html">
                 <span class="nav-tab__inner"><span class="nav-tab__label">Ứng dụng</span><span
                         class="nav-tab__indicator-wrapper nav-tab__indicator-border kte1hc"><span
                             class="nav-tab__indicator nav-tab__indicator-format indicator-length"></span></span></span>
                 <div class="VfPpkd-wJCpie-LhBDec"></div>
             </a>
             <a role="tab" class="nav-tab nav-tab--auto-width nav-tab--styled FEsNhd YmRZ5d dUghbc" aria-selected="false"
-                tabindex="-1" id="13" href="./children_nav.html">
+                tabindex="-1" id="13" href="/html/children_nav.html">
                 <span class="nav-tab__inner"><span class="nav-tab__label">Trẻ em</span><span
                         class="nav-tab__indicator-wrapper nav-tab__indicator-border kte1hc"><span
                             class="nav-tab__indicator nav-tab__indicator-format indicator-length"></span></span></span>
@@ -72,9 +72,9 @@ class CustomHeader extends HTMLElement {
                     </div>
 
                     <ul class="dropdown-list">
-                        <li><a href="./library.html">Thư viện và thiết bị</a></li>
-                        <li><a href="./payment.html">Thông tin thanh toán và gói thuê bao</a></li>
-                        <li><a href="./setting.html">Cài đặt</a></li>
+                        <li><a href="/html/library.html">Thư viện và thiết bị</a></li>
+                        <li><a href="/html/payment.html">Thông tin thanh toán và gói thuê bao</a></li>
+                        <li><a href="/html/setting.html">Cài đặt</a></li>
                     </ul>
 
                     <div class="dropdown-divider"></div>

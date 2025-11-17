@@ -8,7 +8,7 @@ const port = 3000;
 app.use(cors());
 
 // ... kết nối database ...
-const db = new sqlite3.Database('./mydatabase.db', /* ... */);
+const db = new sqlite3.Database('../../mydatabase.db', /* ... */);
 
 // --- THAY ĐỔI Ở ĐÂY ---
 // Thay vì /api/user/CGS3010
