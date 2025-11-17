@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = document.createElement("div");
       item.className = "platform-item app-row-spacing";
       item.innerHTML = `
-        <div class="VfPpkd-WsjYwc VfPpkd-WsjYwc--outlined card--elevated card--flat AaN0Dd card--responsive">
+        <div class="card card--outlined card--elevated card--flat AaN0Dd card--responsive">
           <div class="card__content">
             <div class="card-container card-inner">
               <a class="card-link card-content" href="${g.href}">
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = document.createElement("div");
       item.className = "platform-item app-row-spacing";
       item.innerHTML = `
-        <div class="VfPpkd-WsjYwc VfPpkd-WsjYwc--outlined card--elevated card--flat AaN0Dd card--responsive">
+        <div class="card card--outlined card--elevated card--flat AaN0Dd card--responsive">
           <div class="card__content">
             <div class="card-container card-inner">
               <a class="card-link card-content" href="${g.href}">
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = document.createElement("div");
       item.className = "platform-item app-row-spacing";
       item.innerHTML = `
-        <div class="VfPpkd-WsjYwc VfPpkd-WsjYwc--outlined card--elevated card--flat AaN0Dd card--responsive">
+        <div class="card card--outlined card--elevated card--flat AaN0Dd card--responsive">
           <div class="card__content">
             <div class="card-container card-inner">
               <a class="card-link card-content" href="${g.href}">
@@ -215,24 +215,28 @@ document.addEventListener("DOMContentLoaded", () => {
   if (editorPicksContainer && Array.isArray(editorPicksRow)) {
     editorPicksRow.forEach((g) => {
       const item = document.createElement("div");
-      item.className = "platform-item neq64b";
+      item.className = "platform-item spotlight-grid__cell-spacing";
       item.innerHTML = `
-        <div class="VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd hHUYDe">
+        <div class="card card--outlined card--elevated card--flat AaN0Dd spotlight-banner__container">
           <div class="card__content">
-            <div class="card-container jVR3ye">
-              <a href="${g.bannerHref}" class="card-link WPfqYc">
-                <div class="n2q3zf">
-                  <div class="GnAUad iEDKhd">${g.badgeText}</div>
+            <div class="card-container spotlight-banner__content-wrapper">
+              <a href="${g.bannerHref}" class="card-link pos-relative">
+                <div class="spotlight-card__badge">
+                  <div class="spotlight-card__badge-text text-color-black">${
+                    g.badgeText
+                  }</div>
                 </div>
-                <div class="Pdcv8e" style="background-color: ${g.bannerBg}">
+                <div class="spotlight-card" style="background-color: ${
+                  g.bannerBg
+                }">
                   <img
                     src="${g.bannerImg}"
-                    class="img-contain SzSlNc"
+                    class="img-contain spotlight-card__image"
                     aria-hidden="true"
                   />
-                  <div class="xovwLb"></div>
+                  <div class="spotlight-card__footer"></div>
                   <div
-                    class="GkwRVc"
+                    class="spotlight-card__image-overlay"
                     style="
                       background-image: linear-gradient(
                         180deg,
@@ -242,61 +246,68 @@ document.addEventListener("DOMContentLoaded", () => {
                     "
                   ></div>
                 </div>
-                <div class="lbNC6b">
-                  <div class="YLCN0d iEDKhd">${g.title}</div>
+                <div class="spotlight-card__content-overlay">
+                  <div class="spotlight-card__title text-color-black">${
+                    g.title
+                  }</div>
                   ${
                     g.subtitle
-                      ? `<div class="gb8Aof iEDKhd">${g.subtitle}</div>`
+                      ? `<div class="spotlight-card__subtitle text-color-black">${g.subtitle}</div>`
                       : ""
                   }
                 </div>
               </a>
 
-              <div class="us8NPb">
+            
+            </div>
+              <div class="spotlight-card__footer-grid">
                 <a href="${g.appHref}">
-                  <div class="vw3wnd">
+                  <div class="spotlight-card__app-info-group">
                     <img
                       src="${g.appIcon}"
-                      class="img-contain nnW2Md"
+                      class="img-contain spotlight-card__app-icon"
                       aria-hidden="true"
                       alt="Hình thu nhỏ"
                     />
-                    <div class="FfpWjf">
-                      <div class="pNaVI">
-                        <span class="fkdIre iEDKhd">${g.appName}</span>
+                    <div class="spotlight-card__app-details">
+                      <div class="spotlight-card__detail-line">
+                        <span class="spotlight-card__app-name text-color-black">${
+                          g.appName
+                        }</span>
                       </div>
-                      <div class="pNaVI">
-                        <span class="bcLwIe iEDKhd">${g.appDev}</span>
-                        <span aria-hidden="true" class="VqQw9b iEDKhd">•</span>
+                      <div class="spotlight-card__detail-line">
+                        <span class="spotlight-card__app-category text-color-black">${
+                          g.appDev
+                        }</span>
+                        <span aria-hidden="true" class="spotlight-card__rating-spacer text-color-black">•</span>
                         <img
                           src="${g.appAgeIcon}"
-                          class="img-contain FRzJkf"
+                          class="img-contain spotlight-card__rating-star-icon"
                           alt="${g.appAgeAlt}"
                         />
                       </div>
                     </div>
                   </div>
                 </a>
-                <div class="fvMBP">
+                <div class="util-flex-center-column">
                   <div>
-                    <div class="u4ICaf">
-                      <div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb">
+                    <div class="button-wrapper">
+                      <div class="button__touch-wrapper">
                         <button
-                          class="button VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 MjT6xe sOCCfd HNnJkb XzJShf iEDKhd GFmdkb"
+                          class="button button--theme-green button--contained button--typography button--padding-x-large focus-visible button--shape-rounded button--text-light button--min-width-medium spotlight-button--small text-color-black spotlight-button--secondary"
                           data-disable-idom="true"
                           aria-label="${g.buttonAria}"
                         >
-                          <div class="VfPpkd-Jh9lGc"></div>
-                          <div class="VfPpkd-J1Ukfc-LhBDec"></div>
-                          <div class="VfPpkd-RLmnJb"></div>
-                          <span class="VfPpkd-vQzf8d">${g.buttonLabel}</span>
+                          <div class="ripple--bounded"></div>
+                          <div class="button__focus-ring"></div>
+                          <div class="button__touch-target"></div>
+                          <span class="button__label">${g.buttonLabel}</span>
                         </button>
                       </div>
                     </div>
                   </div>
-                  <span class="BQ6Nz iEDKhd">${g.purchaseNote}</span>
+                  <span class="text-color-black">${g.purchaseNote}</span>
                 </div>
-              </div>
             </div>
           </div>
         </div>
