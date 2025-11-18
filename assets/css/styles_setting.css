@@ -8,6 +8,10 @@
     border-radius: 8px;
 }
 
+.main-content {
+    max-width: 1100px;
+}
+
 /* --- SECTION TITLE (ĐÃ KHẮC PHỤC LỖI THỤT ĐẦU DÒNG VÀ MARGIN) --- */
 .section-title {
     font-size: 20px;
