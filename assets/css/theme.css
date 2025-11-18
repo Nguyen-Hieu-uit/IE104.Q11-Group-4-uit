@@ -6,12 +6,6 @@ body.light-theme {
     color: #222222;
 }
 
-/* Chế độ Tối */
-body.dark-theme {
-    background-color: #222222;
-    color: #EEEEEE;
-}
-
 /* Hiệu ứng rơi (Lấy từ code trước) */
 #particle-container {
     position: fixed;

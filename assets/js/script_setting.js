@@ -1,4 +1,4 @@
-/* --- script_setting.js (ĐÃ CẬP NHẬT HOÀN CHỈNH) --- */
+/* --- script_setting.js --- */
 
 // --- HÀM XỬ LÝ SỰ KIỆN CHỈNH SỬA ---
 async function handleEditClick(event) {
@@ -46,12 +46,21 @@ function handleGenderToggle(event) {
     const optionsContainer = clickedButton.closest('.gender-options');
     const buttons = optionsContainer.querySelectorAll('.gender-btn');
 
+    // Logic xử lý trạng thái active
     if (clickedButton.classList.contains('active')) {
         clickedButton.classList.remove('active');
+        // KHI BỎ CHỌN: Lưu giá trị 'none' để tránh fallback về JSON mặc định
+        localStorage.setItem('selectedGender', 'none');
+        console.log("Giới tính đã được bỏ chọn (Lưu 'none').");
     }
     else {
         buttons.forEach(btn => btn.classList.remove('active'));
         clickedButton.classList.add('active');
+
+        // KHI CHỌN: Lưu giá trị giới tính đã chọn vào Local Storage
+        const selectedGender = clickedButton.textContent.trim();
+        localStorage.setItem('selectedGender', selectedGender);
+        console.log(`Giới tính đã được chọn: ${selectedGender} (Đã lưu vào Local Storage)`);
     }
 }
 
@@ -112,7 +121,7 @@ async function showCustomPrompt(title, currentValue) {
 }
 
 
-// --- HÀM CHÍNH DỰNG HTML ---
+// --- HÀM CHÍNH DỰNG HTML (CẬP NHẬT LOGIC GIỚI TÍNH) ---
 function loadAllSettings(data) {
     const container = document.getElementById("full-content-area");
 
@@ -126,9 +135,27 @@ function loadAllSettings(data) {
     const username = user.Username || "N/A";
     const email = user.Email || "N/A";
     const fullName = user.FullName || "N/A";
-    const gender = user.Gender || "N/A";
+
+    const defaultGender = user.Gender || "N/A";
+    const storedGender = localStorage.getItem('selectedGender');
+
+    let currentGender = defaultGender;
+
+    // 1. Kiểm tra trạng thái đã bỏ chọn ('none')
+    if (storedGender === 'none') {
+        currentGender = 'none'; // Không chọn nút nào cả
+    }
+    // 2. Kiểm tra giá trị hợp lệ đã lưu
+    else if (storedGender) {
+        currentGender = storedGender;
+    }
+    // 3. Nếu không có gì trong storage, dùng mặc định JSON
+    // (Nếu storedGender là null, currentGender sẽ giữ nguyên giá trị defaultGender)
+
+
     const location = user.Location || "N/A";
     const language = user.Languague || "Tiếng Việt";
+    // =======================================================
 
     const rawAge = user.Age;
     const ageValue = parseInt(rawAge, 10);
@@ -151,7 +178,7 @@ function loadAllSettings(data) {
     // --- BẮT ĐẦU XÂY DỰNG HTML ---
     let finalHtml = '';
 
-    // --- Part 1: Thông tin Tài khoản ---
+    // --- Part 1 & Các phần khác giữ nguyên... ---
     finalHtml += `<h2 class="section-title">Thông tin Tài khoản</h2>`;
 
     // Tên hiển thị (Username)
@@ -197,9 +224,9 @@ function loadAllSettings(data) {
         </section>
     `;
 
-    // Giới tính
-    const isMaleActive = gender === "Nam" ? 'active' : '';
-    const isFemaleActive = gender === "Nữ" ? 'active' : '';
+    // Giới tính (Sử dụng currentGender)
+    const isMaleActive = currentGender === "Nam" ? 'active' : '';
+    const isFemaleActive = currentGender === "Nữ" ? 'active' : '';
     finalHtml += `
         <section class="seamless-item gender-select">
             <p class="label-text">Giới tính:</p>
@@ -248,7 +275,6 @@ function loadAllSettings(data) {
     container.innerHTML = finalHtml;
 
     // =======================================================
-    // !! BẮT ĐẦU LOGIC SỬA LỖI (THÊM MỚI) !!
     // Gắn listener cho <select> chủ đề NGAY SAU KHI tạo ra nó
     // =======================================================
     const themeSelect = document.getElementById('theme-select');
@@ -264,7 +290,6 @@ function loadAllSettings(data) {
             localStorage.setItem('theme', newTheme);
 
             // Gọi các hàm global từ file 'theme-manager.js'
-            // (File này phải được tải TRƯỚC file 'script_setting.js')
             if (typeof applyThemeColors === 'function') {
                 applyThemeColors(newTheme);
             }
@@ -273,9 +298,6 @@ function loadAllSettings(data) {
             }
         });
     }
-    // =======================================================
-    // !! KẾT THÚC LOGIC SỬA LỖI !!
-    // =======================================================
 }
 
 // Khởi tạo ứng dụng
@@ -290,23 +312,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', handleEditClick);
 
     // =======================================================
-    // !! PHẦN ĐÃ CHỈNH SỬA !!
-    // 3. Tải dữ liệu từ file JSON cục bộ
-    fetch('/assets/json/data_setting.json') // Giả định file data_setting.json nằm cùng cấp với file HTML
+    // !! LOGIC TẢI DỮ LIỆU TỪ FILE JSON CỤC BỘ !!
+    // =======================================================
+    fetch('/assets/json/data_setting.json')
         .then(response => {
             if (!response.ok) {
-                // Thay đổi thông báo lỗi để phù hợp với việc tải file
                 throw new Error(`Lỗi khi tải file JSON! status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
-            // Dòng này sẽ gọi hàm loadAllSettings đã được cập nhật ở trên
             loadAllSettings(data);
         })
         .catch(error => {
             console.error("Lỗi khi tải hoặc xử lý file JSON:", error);
             document.getElementById("full-content-area").innerHTML = `<p style="color: red;">Không thể tải dữ liệu từ file data_setting.json.</p>`;
         });
-    // =======================================================
 });
