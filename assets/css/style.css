@@ -1942,23 +1942,23 @@ img {
 
 /* auoIOc */
 .app-identity__developer-text {
-  color: #01875f;
-  fill: #01875f;
-  stop-color: #01875f;
+  color: #cc8a45;
+  fill: #cc8a45;
+  stop-color: #cc8a45;
 }
 
 .app-identity__developer-text:not(:disabled) {
-  color: #01875f;
+  color: #cc8a45;
 }
 
 .app-header-summary .app-identity__developer-text {
-  color: #00a173;
-  fill: #00a173;
-  stop-color: #00a173;
+  color: #ce965c;
+  fill: #ce965c;
+  stop-color: #ce965c;
 }
 
 .app-header-summary .app-identity__developer-text:not(:disabled) {
-  color: #00a173;
+  color: #ce965c;
 }
 
 /* ulKokd */
@@ -2174,11 +2174,11 @@ img {
 /* u4ICaf */
 /* aLey0c */
 .button-wrapper .button--text-green:not(:disabled) {
-  color: #01875f;
+  color: #cc8a45;
 }
 
 .app-header-summary .button-wrapper .button--text-green:not(:disabled) {
-  color: #00a173;
+  color: #ce965c;
 }
 
 /* edaMIf */
@@ -2378,11 +2378,11 @@ img {
 
 /* BhQfub */
 .button-wrapper .button--primary:not(:disabled) {
-  background-color: #01875f;
+  background-color: #cc8a45;
 }
 
 .app-header-summary .button-wrapper .button--primary:not(:disabled):hover {
-  background-color: #00a173;
+  background-color: #ce965c;
 }
 
 /* vO0kpf */
@@ -2788,23 +2788,23 @@ img {
 
 /* bQL56b */
 .button--secondary {
-  color: #01875f;
-  fill: #01875f;
-  stop-color: #01875f;
+  color: #cc8a45;
+  fill: #cc8a45;
+  stop-color: #cc8a45;
 }
 
 .button--secondary:not(:disabled) {
-  color: #01875f;
+  color: #cc8a45;
 }
 
 .app-header-summary .button--secondary {
-  color: #00a173;
-  fill: #00a173;
-  stop-color: #00a173;
+  color: #ce965c;
+  fill: #ce965c;
+  stop-color: #ce965c;
 }
 
 .app-header-summary .button--secondary:not(:disabled) {
-  color: #00a173;
+  color: #ce965c;
 }
 
 /* qQhJce */
@@ -3045,11 +3045,11 @@ img {
 }
 
 .star-rating .star-rating__star.is-clicked .star-rating__icon svg {
-  fill: #01875f;
+  fill: #cc8a45;
 }
 
 .star-rating:hover .star-rating__star .star-rating__icon svg {
-  fill: #01875f;
+  fill: #cc8a45;
 }
 
 /* Khi hover vào con -> các con ĐẰNG SAU về màu xám */
@@ -3328,13 +3328,13 @@ img {
 
 /* Z1Dz7b */
 .star-rating__icon--filled {
-  color: #01875f;
-  fill: #01875f;
-  stop-color: #01875f;
+  color: #cc8a45;
+  fill: #cc8a45;
+  stop-color: #cc8a45;
 }
 
 .star-rating__icon--filled:not(:disabled) {
-  color: #01875f;
+  color: #cc8a45;
 }
 
 /* JzwBgb */
@@ -3367,7 +3367,7 @@ img {
 
 /* wcB8se */
 .rating-bar__progress--filled {
-  background-color: #01875f;
+  background-color: #cc8a45;
 }
 
 /* RutFAf */
