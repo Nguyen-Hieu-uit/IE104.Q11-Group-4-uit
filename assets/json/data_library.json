@@ -1,23 +1,45 @@
 {
     "apps": [
         {
-            "title": "Facebook",
+            "id": 1,
+            "name": "Facebook",
+            "icon": "https://play-lh.googleusercontent.com/KCMTYuiTrKom4Vyf0G4foetVOwhKWzNbHWumV73IXexAIy5TTgZipL52WTt8ICL-oIo=w480-h960-rw",
             "developer": "Meta Platforms, Inc.",
-            "icon": "https://play-lh.googleusercontent.com/KCMTYuiTrKom4Vyf0G4foetVOwhKWzNbHWumV73IXexAIy5TTgZipL52WTt8ICL-oIo=w480-h960-rw"
+            "costType": "Miễn phí (In-app purchases)",
+            "rating": 4.1,
+            "downloads": "5T+"
         }
     ],
     "games": [
         {
+            "id": 1,
             "title": "Plague Inc.",
-            "developer": "Ndemic Creations",
-            "icon": "https://play-lh.googleusercontent.com/AhhhI8JGijtKuO8xOP_qUzOvIk7R7xBIKALKW_P7DV7jzWtvo2LrfC0081XMc85NGeBK=s128-rw"
+            "icon": "https://play-lh.googleusercontent.com/AhhhI8JGijtKuO8xOP_qUzOvIk7R7xBIKALKW_P7DV7jzWtvo2LrfC0081XMc85NGeBK=s128-rw",
+            "publisher": "Ndemic Creations",
+            "costType": "Miễn phí (In-app purchases)",
+            "rating": 4.6,
+            "downloads": "10Tr+"
+        },
+        {
+            "id": 2,
+            "name": "Genshin Impact",
+            "logoUrl": "https://play-lh.googleusercontent.com/AAL-aJSzGV_C5XCCsiQX2VRPuMouUK-jLQ6D_3BrBfaYD4D81iQMTJ3u1Ihsw6b5kGM=w240-h480-rw",
+            "trailerHtml": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/w50jW_iEXns?si=N4RT4rZ5AFzP_4Uu&controls=0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+            "publisher": "HoYoverse",
+            "costType": "Miễn phí (In-app purchases)",
+            "rating": 4.5,
+            "downloads": "100Tr+"
         }
     ],
     "favorites": [
         {
+            "id": 1,
             "title": "Plague Inc.",
-            "developer": "Ndemic Creations",
-            "icon": "https://play-lh.googleusercontent.com/AhhhI8JGijtKuO8xOP_qUzOvIk7R7xBIKALKW_P7DV7jzWtvo2LrfC0081XMc85NGeBK=s128-rw"
+            "icon": "https://play-lh.googleusercontent.com/AhhhI8JGijtKuO8xOP_qUzOvIk7R7xBIKALKW_P7DV7jzWtvo2LrfC0081XMc85NGeBK=s128-rw",
+            "publisher": "Ndemic Creations",
+            "costType": "Miễn phí (In-app purchases)",
+            "rating": 4.6,
+            "downloads": "10Tr+"
         }
     ],
     "devices": [
