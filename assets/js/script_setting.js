@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =======================================================
     // !! LOGIC TẢI DỮ LIỆU TỪ FILE JSON CỤC BỘ !!
     // =======================================================
-    fetch('/assets/json/data_setting.json')
+    fetch('/assets/json/userData.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Lỗi khi tải file JSON! status: ${response.status}`);
