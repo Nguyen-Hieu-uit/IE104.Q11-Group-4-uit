@@ -1,4 +1,4 @@
-/* --- theme-manager.js (PHIÊN BẢN MỚI) --- */
+/* --- theme-manager.js --- */
 
 // --- 1. CÁC BIẾN VÀ HÀM HIỆU ỨNG RƠI ---
 // (Giữ nguyên các hàm cốt lõi)

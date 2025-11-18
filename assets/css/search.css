@@ -85,9 +85,12 @@ body {
   gap: 40px 20px;
 }
 
+.app-overview .app-name {
+  line-height: 1.2;
+}
+
 .result-item-featured {
   display: flex;
-  justify-content: space-between;
   height: 360px;
   grid-column: 1 / span 3;
   border: none;
@@ -181,9 +184,9 @@ body {
 }
 
 @media screen and (min-width: 600px) {
-  .app-identity__stats-bar {
+  #app-identity__stats-bar-search {
     margin-left: 0;
-    width: auto;
+    width: 100%;
   }
 }
 
@@ -194,10 +197,10 @@ body {
   }
 }
 
-.app-identity-stats-bar__content {
+.app-overview .app-identity-stats-bar__content {
   display: flex;
-  overflow: auto hidden;
   width: 100%;
+  overflow: hidden;
   padding-bottom: 4px;
   padding-left: 4px;
 }

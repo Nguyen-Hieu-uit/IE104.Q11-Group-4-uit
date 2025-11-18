@@ -6,18 +6,26 @@ function toggleVisibility(index, isVisible) {
         // Cập nhật giá trị boolean trong bộ nhớ
         libraryData.devices[index].visibility = isVisible;
 
-        // Hiển thị thông báo trong console (trong ứng dụng thực tế, sẽ lưu vào DB)
+        // Hiển thị thông báo trong console
         console.log(`Trạng thái hiển thị của thiết bị '${libraryData.devices[index].name}' đã được cập nhật thành: ${isVisible}.`);
     }
 }
 
 // Hàm chung để tạo HTML cho một mục (ứng dụng/trò chơi/yêu thích)
 function createItemHtml(item) {
+    // Xử lý sự không đồng nhất:
+    // 1. Tên (title/name)
+    const title = item.title || item.name;
+    // 2. Nhà phát triển (developer/publisher)
+    const developer = item.developer || item.publisher;
+    // 3. Icon (icon/logoUrl)
+    const iconSource = item.icon || item.logoUrl;
+
     return `
-        <img src="${item.icon}" alt="icon">
+        <img src="${iconSource}" alt="${title} icon">
         <div>
-            <p class="app-text-title">${item.title}</p>
-            <p class="app-text-dev">${item.developer}</p>
+            <p class="app-text-title">${title}</p>
+            <p class="app-text-dev">${developer}</p>
         </div>
     `;
 }

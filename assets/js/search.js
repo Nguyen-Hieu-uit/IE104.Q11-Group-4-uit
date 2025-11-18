@@ -152,7 +152,7 @@ function createResultItem(app, query, isFeatured) {
           </div>
         </div>
       </div>
-      <div class="app-identity__stats-bar">
+      <div class="app-identity__stats-bar" id="app-identity__stats-bar-search">
         <div class="app-identity-stats-bar__content">
           <img src="${app.logoUrl}" alt="${appName} Logo" class="app-icon" />
           <div class="app__stats-bar__item">

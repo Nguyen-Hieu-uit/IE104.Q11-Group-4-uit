@@ -1,0 +1,14 @@
+{
+    "User": [
+        {
+            "Username": "NguyenVanA",
+            "Avatar": "https://lh3.googleusercontent.com/a/ACg8ocLy4_GnkIHGe1yeIk6TVmY8FNzNneyNjrQtrPKyFiHhxFSFvg=s32-c-k-cc-mo",
+            "Email": "nguyenvana@gmail.com",
+            "Password": "123456789",
+            "FullName": "Nguyễn Văn A",
+            "Age": "20",
+            "Gender": "Nam",
+            "Location": "Việt Nam"
+        }
+    ]
+}

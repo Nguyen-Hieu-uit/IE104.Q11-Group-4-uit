@@ -3,9 +3,13 @@
 class CustomHeader extends HTMLElement {
   constructor() {
     super();
+    this.innerHTML = this.getInitialHTML();
+    this.fetchUserDataAndRender();
+  }
 
-    // Thêm HTML trực tiếp vào component
-    this.innerHTML = `
+  // HTML ban đầu của component (giữ nguyên cấu trúc)
+  getInitialHTML() {
+    return `
             <link rel="stylesheet" href="/assets/css/style.css">
             <link rel="stylesheet" href="/assets/css/SettingTab.css">
             <link rel="stylesheet" href="/assets/css/header.css">
@@ -68,21 +72,22 @@ class CustomHeader extends HTMLElement {
 
                         <div class="profile-menu-container">
                             <button class="icon-button icon_container" id="avatar-button">
-                                <img src="https://lh3.googleusercontent.com/a/ACg8ocLy4_GnkIHGe1yeIk6TVmY8FNzNneyNjrQtrPKyFiHhxFSFvg=s32-c-k-cc-mo" class="icon_inner" alt="Avatar Button"/>
+                                <img src="" class="icon_inner" alt="Avatar Button" id="header-avatar-1"/>
                             </button>
 
                             <div class="profile-dropdown" id="profile-dropdown-menu">
                                 <div class="dropdown-header">
-                                    <img src="https://lh3.googleusercontent.com/a/ACg8ocLy4_GnkIHGe1yeIk6TVmY8FNzNneyNjrQtrPKyFiHhxFSFvg=s32-c-k-cc-mo" class="dropdown-avatar" alt="Avatar" />
+                                    <img src="" class="dropdown-avatar" alt="Avatar" id="header-avatar-2"/>
                                     <div class="user-info">
-                                        <span class="user-name">Tên Của Bạn</span>
-                                        <span class="user-email">email@cuaban.com</span>
+                                        <span class="user-name" id="user-name-display"></span>
+                                        <span class="user-email" id="user-email-display"></span>
                                     </div>
                                 </div>
 
                                 <ul class="dropdown-list">
                                     <li><a href="/html/library.html">Thư viện và thiết bị</a></li>
                                     <li><a href="/html/payment.html">Thông tin thanh toán và gói thuê bao</a></li>
+                                    <li><a href="/html/offers.html">Ưu đãi</a></li>
                                     <li><a href="/html/setting.html">Cài đặt</a></li>
                                 </ul>
 
@@ -97,6 +102,38 @@ class CustomHeader extends HTMLElement {
                 </nav>
             </header>
         `;
+  }
+
+  // Hàm lấy dữ liệu và cập nhật DOM
+  async fetchUserDataAndRender() {
+    try {
+      // Giả sử file userData.json nằm cùng cấp hoặc có thể truy cập được
+      const response = await fetch("/assets/json/userData.json");
+      const data = await response.json();
+
+      // Lấy thông tin người dùng đầu tiên trong mảng "User"
+      const userData = data.User[0];
+
+      if (userData) {
+        // Lấy các phần tử cần cập nhật
+        const userNameElement = this.querySelector("#user-name-display");
+        const userEmailElement = this.querySelector("#user-email-display");
+        const headerAvatar1 = this.querySelector("#header-avatar-1");
+        const headerAvatar2 = this.querySelector("#header-avatar-2");
+
+        // Cập nhật nội dung và thuộc tính
+        if (userNameElement)
+          userNameElement.textContent = userData.FullName || userData.Username;
+        if (userEmailElement) userEmailElement.textContent = userData.Email;
+
+        // Cập nhật Avatar (cả ở nút và trong dropdown header)
+        if (headerAvatar1) headerAvatar1.src = userData.Avatar;
+        if (headerAvatar2) headerAvatar2.src = userData.Avatar;
+      }
+    } catch (error) {
+      console.error("Lỗi khi tải hoặc phân tích dữ liệu người dùng:", error);
+      // Có thể giữ lại các giá trị placeholder nếu không tải được
+    }
   }
 }
 
