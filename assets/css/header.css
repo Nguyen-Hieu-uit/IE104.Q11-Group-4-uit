@@ -47,7 +47,6 @@
   }
 }
 
-/* VfPpkd-AznF2e-LUERP-bN97Pc */
 .navigation-tabs {
   position: relative;
   display: flex;
@@ -56,7 +55,6 @@
   will-change: transform;
 }
 
-/* VfPpkd-AznF2e */
 .nav-tab {
   min-width: 90px;
   padding-right: 24px;
@@ -78,7 +76,6 @@
   background: none;
 }
 
-/* VfPpkd-AznF2e-OWXEXe-jJNx8e-QBLLGd */
 .nav-tab--auto-width {
   flex: 0 1 auto;
 }
@@ -93,7 +90,6 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* WbUJNb */
 .nav-tab--styled {
   font-family: "Google Sans", Roboto, Arial, sans-serif;
   line-height: 1.25rem;
@@ -111,7 +107,6 @@
   height: var(--mdc-primary-navigation-tab-container-height, 64px);
 }
 
-/* VfPpkd-N5Lhkf */
 .nav-tab__inner {
   position: relative;
 }
@@ -124,7 +119,6 @@
   pointer-events: none;
 }
 
-/* VfPpkd-jY41G-V67aGc */
 .nav-tab__label {
   transition: 0.15s color linear;
   display: inline-block;
@@ -144,17 +138,14 @@
   color: #01875f;
 }
 
-/* OWXEXe-auswjd */
 .nav-tab-selected .nav-tab__label {
   transition-delay: 0.1s;
 }
 
-/* cvzg3c */
 .active:nth-child(n):nth-child(n).nav-tab-selected .nav-tab__label {
   color: #01875f;
 }
 
-/* uDEFge */
 .nav-tab__indicator-wrapper {
   display: flex;
   position: absolute;
@@ -180,13 +171,11 @@
   }
 }
 
-/* wEcVzc */
 .nav-tab__indicator {
   transform-origin: center;
   opacity: 0;
 }
 
-/* OWXEXe-NowJzb */
 .nav-tab__indicator-format {
   align-self: flex-end;
   box-sizing: border-box;
@@ -194,7 +183,6 @@
   border-top-style: solid;
 }
 
-/* pawmVc */
 .indicator-length {
   margin: 0 2px;
   min-width: 24px;
@@ -210,7 +198,6 @@
   animation: 0.25s underline-animation ease-in-out;
 }
 
-/* rvBHac .nav-tab__indicator-border */
 .nav-tab__indicator-border .nav-tab__indicator-format {
   border-top-width: 3px;
 }
@@ -225,7 +212,6 @@
   opacity: 1;
 }
 
-/* f0UV3d */
 .header__logo-link {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -261,14 +247,12 @@
   display: block;
 }
 
-/* kOqhQd */
 .brand-logo {
   margin-right: 8px;
   height: 40px;
   width: 40px;
 }
 
-/* oc9n0c */
 .header-actions {
   align-items: center;
   display: flex;
@@ -323,7 +307,6 @@
   display: block;
 }
 
-/* PeWVCc */
 .icon_container {
   width: 48px;
   height: 48px;
@@ -336,7 +319,6 @@
   height: 32px;
 }
 
-/* WrEZCd */
 .icon_inner {
   border-radius: 100%;
   height: 32px;
