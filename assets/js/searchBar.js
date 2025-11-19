@@ -1,24 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
   (function loadKeywords() {
-    const jsonFilePath = "/assets/json/appData.json";
-    fetch(jsonFilePath)
+    const primaryPath = "./assets/json/appData.json";
+    const fallbackPath = "../assets/json/appData.json";
+
+    const handleData = (data) => {
+      if (Array.isArray(data)) {
+        data.forEach((app) => {
+          if (app && typeof app.name === "string") {
+            availableKeywords.push(app.name);
+          }
+        });
+      }
+    };
+
+    fetch(primaryPath)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         return response.json();
       })
-      .then((data) => {
-        if (Array.isArray(data)) {
-          data.forEach((app) => {
-            if (app && typeof app.name === "string") {
-              availableKeywords.push(app.name);
-            }
-          });
-        }
-      })
+      .then(handleData)
       .catch((error) => {
-        console.error("Lỗi khi tải appData.json:", error);
+        console.error("Lỗi khi tải appData.json từ", primaryPath, error);
+
+        // Thử fetch từ đường dẫn fallback nếu đường dẫn chính lỗi
+        return fetch(fallbackPath)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                `HTTP error from fallback! status: ${response.status}`
+              );
+            }
+            return response.json();
+          })
+          .then(handleData)
+          .catch((fallbackError) => {
+            console.error(
+              "Lỗi khi tải appData.json từ fallback:",
+              fallbackPath,
+              fallbackError
+            );
+          });
       });
   })();
 
