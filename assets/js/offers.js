@@ -8,7 +8,7 @@ const offersData = [
     badge: "Ưu đãi nổi bật",
     image:
       "https://cdn2.unrealengine.com/egs-fortnite-sidekicks-carousel-desktop-1920x1080-ab679c4d991d.jpg?resize=1&w=854&h=480&quality=medium",
-    link: "./index.html#pc-games-row",
+    link: "/index.html#pc-games-row",
     discountPercent: "-20%",
     priceOld: "899.000 ₫",
     priceNew: "719.200 ₫",
@@ -22,7 +22,7 @@ const offersData = [
     badge: "Combo",
     image:
       "https://cdn2.unrealengine.com/egs-anno-117-pax-romana-carousel-desktop-1920x1080-38235212f6fb.jpg?resize=1&w=854&h=480&quality=medium",
-    link: "./index.html#featured-games-row",
+    link: "/index.html#featured-games-row",
     discountPercent: "Mua 2 tặng 1",
     priceOld: "1.200.000 ₫",
     priceNew: "800.000 ₫",
@@ -34,7 +34,7 @@ const offersData = [
     description: "Người dùng mới nhận voucher 50.000 ₫ cho đơn hàng đầu tiên.",
     badge: "Người dùng mới",
     image: "https://placehold.co/854x480/0F9D58/FFFFFF?text=Welcome+Offer",
-    link: "./register.html",
+    link: "/html/register.html",
     discountPercent: "-50.000 ₫",
     priceOld: "",
     priceNew: "Áp dụng tự động khi thanh toán",

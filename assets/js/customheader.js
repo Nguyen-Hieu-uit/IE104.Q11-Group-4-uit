@@ -1,20 +1,21 @@
 // CustomHeader.js
 
 class CustomHeader extends HTMLElement {
-    constructor() {
-        super();
-        this.innerHTML = this.getInitialHTML();
-        this.fetchUserDataAndRender();
-    }
+  constructor() {
+    super();
+    this.innerHTML = this.getInitialHTML();
+    this.fetchUserDataAndRender();
+  }
 
-    // HTML ban đầu của component (giữ nguyên cấu trúc)
-    getInitialHTML() {
-        return `
+  // HTML ban đầu của component (giữ nguyên cấu trúc)
+  getInitialHTML() {
+    return `
             <link rel="stylesheet" href="/assets/css/style.css">
             <link rel="stylesheet" href="/assets/css/SettingTab.css">
             <link rel="stylesheet" href="/assets/css/header.css">
+            
 
-            <header class="header">
+            <header class="header" id="header">
                 <nav class="nav">
                     <a href="/index.html" aria-label="Biểu trưng của App Market" class="header__logo-link">
                         <img src="/assets/logo/logo.png" alt="App Market logo" />
@@ -30,7 +31,7 @@ class CustomHeader extends HTMLElement {
                                     <span class="nav-tab__indicator nav-tab__indicator-format indicator-length"></span>
                                 </span>
                             </span>
-                            <div class="VfPpkd-wJCpie-LhBDec"></div>
+                            
                         </a>
 
                         <a role="tab" class="nav-tab nav-tab--auto-width nav-tab--styled FEsNhd YmRZ5d q2wkXd" 
@@ -41,7 +42,7 @@ class CustomHeader extends HTMLElement {
                                     <span class="nav-tab__indicator nav-tab__indicator-format indicator-length"></span>
                                 </span>
                             </span>
-                            <div class="VfPpkd-wJCpie-LhBDec"></div>
+                            
                         </a>
 
                         <a role="tab" class="nav-tab nav-tab--auto-width nav-tab--styled FEsNhd YmRZ5d dUghbc" 
@@ -52,7 +53,7 @@ class CustomHeader extends HTMLElement {
                                     <span class="nav-tab__indicator nav-tab__indicator-format indicator-length"></span>
                                 </span>
                             </span>
-                            <div class="VfPpkd-wJCpie-LhBDec"></div>
+                           
                         </a>
                     </span>
 
@@ -101,39 +102,40 @@ class CustomHeader extends HTMLElement {
                 </nav>
             </header>
         `;
+  }
+
+  // Hàm lấy dữ liệu và cập nhật DOM
+  async fetchUserDataAndRender() {
+    try {
+      // Giả sử file userData.json nằm cùng cấp hoặc có thể truy cập được
+      const response = await fetch("/assets/json/userData.json");
+      const data = await response.json();
+
+      // Lấy thông tin người dùng đầu tiên trong mảng "User"
+      const userData = data.User[0];
+
+      if (userData) {
+        // Lấy các phần tử cần cập nhật
+        const userNameElement = this.querySelector("#user-name-display");
+        const userEmailElement = this.querySelector("#user-email-display");
+        const headerAvatar1 = this.querySelector("#header-avatar-1");
+        const headerAvatar2 = this.querySelector("#header-avatar-2");
+
+        // Cập nhật nội dung và thuộc tính
+        if (userNameElement)
+          userNameElement.textContent = userData.FullName || userData.Username;
+        if (userEmailElement) userEmailElement.textContent = userData.Email;
+
+        // Cập nhật Avatar (cả ở nút và trong dropdown header)
+        if (headerAvatar1) headerAvatar1.src = userData.Avatar;
+        if (headerAvatar2) headerAvatar2.src = userData.Avatar;
+      }
+    } catch (error) {
+      console.error("Lỗi khi tải hoặc phân tích dữ liệu người dùng:", error);
+      // Có thể giữ lại các giá trị placeholder nếu không tải được
     }
-
-    // Hàm lấy dữ liệu và cập nhật DOM
-    async fetchUserDataAndRender() {
-        try {
-            // Giả sử file userData.json nằm cùng cấp hoặc có thể truy cập được
-            const response = await fetch('/assets/json/userData.json');
-            const data = await response.json();
-
-            // Lấy thông tin người dùng đầu tiên trong mảng "User"
-            const userData = data.User[0];
-
-            if (userData) {
-                // Lấy các phần tử cần cập nhật
-                const userNameElement = this.querySelector('#user-name-display');
-                const userEmailElement = this.querySelector('#user-email-display');
-                const headerAvatar1 = this.querySelector('#header-avatar-1');
-                const headerAvatar2 = this.querySelector('#header-avatar-2');
-
-                // Cập nhật nội dung và thuộc tính
-                if (userNameElement) userNameElement.textContent = userData.FullName || userData.Username;
-                if (userEmailElement) userEmailElement.textContent = userData.Email;
-
-                // Cập nhật Avatar (cả ở nút và trong dropdown header)
-                if (headerAvatar1) headerAvatar1.src = userData.Avatar;
-                if (headerAvatar2) headerAvatar2.src = userData.Avatar;
-            }
-        } catch (error) {
-            console.error('Lỗi khi tải hoặc phân tích dữ liệu người dùng:', error);
-            // Có thể giữ lại các giá trị placeholder nếu không tải được
-        }
-    }
+  }
 }
 
 // Đăng ký component
-customElements.define('custom-header', CustomHeader);
+customElements.define("custom-header", CustomHeader);
