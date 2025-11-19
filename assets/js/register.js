@@ -1,7 +1,7 @@
 // Đọc user mẫu từ userAccount.json để tránh trùng username với dữ liệu cứng
 async function loadUsersFromJson() {
   try {
-    const response = await fetch("../js/userAccount.json");
+    const response = await fetch("/assets/json/userAccount.json");
     if (!response.ok) return [];
     const data = await response.json();
     return Array.isArray(data) ? data : [];

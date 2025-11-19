@@ -1,7 +1,7 @@
 // Đọc danh sách user mẫu từ userAccount.json
 async function loadUsersFromJson() {
   try {
-    const response = await fetch("../js/userAccount.json");
+    const response = await fetch("/assets/json/userAccount.json");
     if (!response.ok) {
       throw new Error("Không thể tải userAccount.json");
     }
