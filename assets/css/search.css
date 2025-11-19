@@ -387,3 +387,7 @@ body {
   opacity: 0.12;
   z-index: 1;
 }
+
+.app-appearance .app-identity__meta {
+  margin-top: 5px;
+}

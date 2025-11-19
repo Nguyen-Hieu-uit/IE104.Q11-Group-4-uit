@@ -150,6 +150,6 @@
 
 .suggestion-item b {
   font-weight: 700;
-  background-color: transparent; /* vàng nhạt */
+  background-color: transparent;
   color: #202124; /* giữ text đậm, dễ đọc */
 }
