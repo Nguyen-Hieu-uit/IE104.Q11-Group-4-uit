@@ -147,3 +147,9 @@
 .suggestion-item:hover {
   background-color: #f0f0f0;
 }
+
+.suggestion-item b {
+  font-weight: 700;
+  background-color: transparent;
+  color: #202124; /* giữ text đậm, dễ đọc */
+}
