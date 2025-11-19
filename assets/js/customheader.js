@@ -18,7 +18,7 @@ class CustomHeader extends HTMLElement {
             <header class="header" id="header">
                 <nav class="nav">
                     <a href="/index.html" aria-label="Biểu trưng của App Market" class="header__logo-link">
-                        <img src="/assets/logo/logo.png" alt="App Market logo" />
+                        <img src="/assets/images/logo.png" alt="App Market logo" />
                         <span aria-hidden="true">App Market</span>
                     </a>
 
