@@ -26,7 +26,7 @@ function getSearchQuery() {
   return urlParams.get("q") ? decodeURIComponent(urlParams.get("q")) : "";
 }
 
-// Hàm lọc và sắp xếp kết quả (Logic giống như trên trang gợi ý)
+// Hàm lọc và sắp xếp kết quả (Logic như trên trang gợi ý)
 function getSortedResults(query, allApps) {
   if (!query) return [];
   const lowerQuery = query.toLowerCase();
@@ -57,7 +57,7 @@ function displayResults(allApps) {
   const resultCountDisplay = document.getElementById("result-count-display");
   const noResults = document.getElementById("no-results");
 
-  // 1. Hiển thị từ khóa đã tìm
+  //Hiển thị từ khóa đã tìm
   queryDisplay.textContent = query || "Không có từ khóa";
 
   if (!query) {
@@ -68,15 +68,14 @@ function displayResults(allApps) {
     return;
   }
 
-  // 2. Lấy kết quả đã sắp xếp
+  //Lấy kết quả đã sắp xếp
   const sortedResults = getSortedResults(query, allApps);
   const resultCount = sortedResults.length;
 
-  // 3. Xử lý hiển thị
+  //Xử lý hiển thị
   if (resultCount > 0) {
     noResults.style.display = "none";
 
-    // --- XỬ LÝ ỨNG DỤNG ĐẦU TIÊN (FEATURED) ---
     // Xóa nội dung cũ
     resultsListFeatured.innerHTML = "";
     resultsListPlain.innerHTML = "";
@@ -95,7 +94,6 @@ function displayResults(allApps) {
     resultCountDisplay.textContent = `Tìm thấy ${resultCount} kết quả.`;
   } else {
     // Xử lý khi không có kết quả
-    // ... (phần code này giữ nguyên)
     resultsListFeatured.innerHTML = "";
     resultsListPlain.innerHTML = "";
     resultCountDisplay.textContent = "Tìm thấy 0 kết quả.";
@@ -103,7 +101,7 @@ function displayResults(allApps) {
   }
 }
 
-// --- HÀM HỖ TRỢ: TẠO THẺ KẾT QUẢ ---
+// --- TẠO THẺ KẾT QUẢ ---
 function createResultItem(app, query, isFeatured) {
   const item = document.createElement("a");
 
@@ -134,7 +132,7 @@ function createResultItem(app, query, isFeatured) {
     </div>
   `;
 
-  // Nội dung đơn giản (Bạn có thể thêm logo, rating, v.v. ở đây)
+  // Nội dung đơn giản (logo, rating, v.v. ở đây)
   const trailerSection = app.trailerHtml
     ? `<div class="trailer-display">${app.trailerHtml}</div>`
     : "";
