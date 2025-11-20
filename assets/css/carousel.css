@@ -972,3 +972,124 @@ svg {
   right: 0;
   background-color: #28282c;
 }
+
+@media (max-width: 1023px) {
+  /* 1. Ẩn hoàn toàn Sidebar */
+  .carousel-nav-sidebar {
+    display: none !important;
+  }
+
+  /* 2. Mở rộng Slide chính ra 100% chiều ngang */
+  .carousel-main-slide-area {
+    -webkit-flex-basis: 100% !important;
+    -ms-flex-preferred-size: 100% !important;
+    flex-basis: 100% !important;
+    max-width: 100% !important;
+    border-radius: 16px; /* Giữ bo góc đẹp */
+  }
+
+  /* 3. Điều chỉnh khung chứa nội dung (Text & Nút) trên Mobile */
+  .slide-info-box {
+    width: auto; /* Để nội dung tự co giãn */
+    right: 20px; /* Cách lề phải */
+    left: 20px; /* Giảm khoảng cách lề trái (gốc là 40px) */
+    bottom: 20px; /* Giảm khoảng cách đáy (gốc là 40px) */
+    align-items: flex-start; /* Căn trái */
+  }
+
+  /* 4. Giảm kích thước Logo Game */
+  .slide-promo-logo {
+    height: 40px; /* Nhỏ lại cho vừa điện thoại */
+    width: 120px;
+    margin-bottom: 10px;
+  }
+
+  /* 5. Ẩn bớt mô tả dài dòng, chỉ hiện tiêu đề và nút */
+  /* (Tùy chọn: Nếu bạn thấy chữ nhiều quá che hết hình) */
+  .text-description {
+    display: none;
+  }
+
+  /* 6. Tinh chỉnh nút bấm (CTA) */
+  .slide-buttons {
+    transform: scale(0.9); /* Thu nhỏ cụm nút một chút */
+    transform-origin: left bottom;
+    margin-top: 10px;
+  }
+
+  /* 7. Tinh chỉnh lại Gradient để chữ dễ đọc hơn trên màn nhỏ */
+  .slide-gradient-overlay {
+    width: 100%; /* Phủ toàn bộ chiều ngang thay vì 80% */
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    ); /* Gradient từ dưới lên thay vì từ trái sang */
+  }
+}
+
+/* --- RESPONSIVE: MOBILE NHỎ (Dưới 768px) --- */
+@media (max-width: 767px) {
+  /* Tăng chiều cao slide trên mobile để hình không bị dẹt quá */
+  .carousel-aspect-box {
+    padding-bottom: 100%; /* Tỷ lệ 1:1 (vuông) hoặc 4:3 thay vì 16:9 */
+  }
+
+  .slide-image {
+    object-fit: cover; /* Đảm bảo ảnh không bị méo khi đổi tỷ lệ */
+  }
+
+  /* Font chữ nhỏ hơn nữa */
+  .text-sale-tag {
+    font-size: 0.8rem;
+  }
+
+  .slide-info-box {
+    bottom: 12px !important; /* Giảm khoảng cách đáy (Desktop là 40px) */
+    left: 12px !important; /* Giảm khoảng cách trái (Desktop là 40px) */
+    width: calc(100% - 24px) !important; /* Đảm bảo không bị tràn ngang */
+    padding-right: 12px; /* Tránh chữ dính sát lề phải */
+  }
+
+  /* 2. Xử lý khu vực nút bấm */
+  .slide-buttons {
+    flex-wrap: wrap; /* Cho phép nút rớt xuống dòng nếu không đủ chỗ */
+    gap: 8px; /* Giảm khoảng cách giữa các nút */
+    margin-top: 8px; /* Kéo gần lại với phần mô tả */
+  }
+
+  /* 3. Thu nhỏ kích thước nút bấm */
+  .slide-buttons button.button {
+    padding: 8px 16px !important; /* Giảm độ dày của nút */
+    font-size: 12px !important; /* Giảm cỡ chữ trong nút */
+    height: auto !important; /* Chiều cao tự động theo nội dung */
+    min-height: 32px; /* Đảm bảo nút không quá bé để bấm */
+    width: auto; /* Để nút tự co giãn, hoặc dùng 100% nếu muốn nút full chiều ngang */
+  }
+
+  /* Tùy chọn: Nếu muốn nút full chiều ngang trên mobile để dễ bấm */
+  /* .slide-buttons .button-wrapper, 
+  .slide-buttons button.button {
+    width: 100% !important; 
+  }
+  */
+
+  /* 4. Đảm bảo container chính cắt bỏ phần thừa (bo góc) */
+  .carousel-slide,
+  .slide-content-wrapper,
+  .slide-image-wrapper {
+    border-radius: 16px; /* Đảm bảo độ bo góc */
+    overflow: hidden; /* Cắt bỏ mọi thứ tràn ra ngoài bo góc */
+  }
+
+  /* 5. (Quan trọng) Ẩn bớt các phần tử thừa thãi chiếm chỗ */
+  .slide-promo-logo {
+    margin-bottom: 8px !important; /* Giảm khoảng cách logo */
+    height: 30px !important; /* Thu nhỏ logo hơn nữa */
+  }
+
+  .slide-description-wrapper {
+    margin-bottom: 8px !important;
+  }
+}
