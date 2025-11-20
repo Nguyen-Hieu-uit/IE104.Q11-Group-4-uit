@@ -4273,3 +4273,17 @@ img {
 .spotlight-button--secondary:not(:disabled) {
   background-color: rgba(32, 33, 36, 0.2);
 }
+
+/* fix lỗi header và body không ăn khớp trong app detail */
+
+@media screen and (min-width: 600px) {
+  .app-detail-page {
+    width: calc(100% - 96px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .app-detail-page {
+    width: calc(100% - 144px);
+  }
+}
