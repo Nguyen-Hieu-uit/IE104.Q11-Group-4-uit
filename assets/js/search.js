@@ -140,7 +140,7 @@ function createResultItem(app, query, isFeatured) {
   item.innerHTML = `
     <div class="app-overview">
       <div class="app-appearance">
-        <img src="${app.logoUrl}" alt="${appName} Logo" class="app-icon" />
+        <img src="${app.LogoPath}" alt="${appName} Logo" class="app-icon" />
         <div>
           <div class="app-name">${appName}</div>
           <div class="app-identity__meta">
@@ -152,7 +152,7 @@ function createResultItem(app, query, isFeatured) {
       </div>
       <div class="app-identity__stats-bar" id="app-identity__stats-bar-search">
         <div class="app-identity-stats-bar__content">
-          <img src="${app.logoUrl}" alt="${appName} Logo" class="app-icon" />
+          <img src="${app.LogoPath}" alt="${appName} Logo" class="app-icon" />
           <div class="app__stats-bar__item">
             <div class="stat-item__value">
               ${app.rating}
@@ -179,7 +179,7 @@ function createResultItem(app, query, isFeatured) {
                 srcset="
                   https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w192-h64-rw 2x
                 "
-                class="img-contain__age-limit-icon"
+                class="img-contain__age-limit-icon" alt="Giới hạn độ tuổi"
               />
             </div>
             <div class="stat-item__label">3 tuổi trở lên</div>
