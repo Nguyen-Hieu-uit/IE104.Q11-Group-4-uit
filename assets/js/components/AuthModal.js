@@ -11,7 +11,6 @@ class AuthModal extends HTMLElement {
   render() {
     this.innerHTML = `
       <style>
-        /* CSS giữ nguyên như cũ, chỉ thêm css cho select */
         .auth-actions { display: flex; gap: 10px; align-items: center; margin-left: 10px; }
         .trigger-btn { background: none; border: none; cursor: pointer; font-family: "Google Sans", Roboto, Arial, sans-serif; font-size: 14px; font-weight: 500; color: #5f6368; padding: 8px 16px; border-radius: 4px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
         .trigger-btn:hover { background-color: #f1f3f4; color: #202124; }
