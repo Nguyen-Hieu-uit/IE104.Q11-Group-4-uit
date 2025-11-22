@@ -7,15 +7,16 @@
 }
 
 .search__box {
+  height: 40px;
   margin: 0px;
   display: flex;
   position: relative;
   /* Desktop/tablet: co dãn theo chiều ngang màn hình */
-  width: clamp(160px, 25vw, 500px);
+  width: clamp(100px, 20vw, 400px);
   /* 1. HIỆU ỨNG CHUYỂN TỪ INPUT SANG BOX */
   border-radius: 50px; /* Tạo bo góc cho cả khối */
   border: 1px solid #575756; /* Tạo viền cho cả khối */
-  transition: all 100ms ease-in-out;
+  transition: all 20ms ease-in-out;
 
   /* Các thuộc tính 3D (thường liên quan đến hiệu ứng hover) */
   backface-visibility: hidden;
@@ -33,7 +34,7 @@
   box-sizing: content-box;
   width: 100%;
   /* chừa khoảng bên phải cho nút clear */
-  padding: 12px 32px 12px 12px;
+  padding-left: 12px;
   border: none;
   outline: none; /* Bỏ viền mặc định khi focus */
   z-index: 100;
@@ -47,12 +48,13 @@
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-position: 95% center; /* Vị trí icon search */
-  transition: all 250ms ease-in-out;
+  transition: all 50ms ease-in-out;
 
   &:hover,
   &:focus {
     background-position: calc(100% - 8px) center;
     padding: 12px 0px 12px 0px;
+    transition: all 250ms ease-in-out;
   }
 }
 
@@ -63,13 +65,13 @@
 }
 
 /* Responsive: trên màn nhỏ, thu gọn thanh search chỉ còn icon kính lúp */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 700px) {
   .search__box {
-    width: 40px;
-    min-width: 40px;
+    max-width: 40px;
     height: 40px;
     border-radius: 50px;
     padding: 0;
+    transition: all 0ms ease-in-out;
   }
 
   #search-input {
@@ -80,31 +82,41 @@
     background-position: center;
     background-size: 18px 18px;
     font-size: 0; /* ẩn text khi chưa focus */
+    transition: all 25ms ease-in-out;
   }
 
   /* #search-input::placeholder {
     color: transparent; 
   } */
 
-  #search-input:hover,
-  #search-input:focus {
+  #search-input:focus,
+  #search-input:hover {
     width: 100%;
     padding: 0px 0px 0px 0px;
     font-size: 14px;
     background-position: 100%;
+    transition: all 25ms ease-in-out;
   }
 
-  .search__box:hover,
-  .search__box:focus-within {
+  .search__box:focus-within,
+  .search__box:hover {
+    max-width: 100%;
     width: 100%;
     border: 1px solid transparent;
     border-bottom: 1px solid #575756;
     border-radius: 0;
-    transition: all 250ms ease-in-out;
+    transition: all 25ms ease-in-out;
   }
   .clear__button {
     transform: translateY(-100%);
     display: none;
+  }
+  .header-actions .search__box:focus-within ~ .icon-button,
+  .header-actions .search__box:hover ~ .icon-button,
+  .header-actions .search__box:focus-within ~ #auth-container,
+  .header-actions .search__box:hover ~ #auth-container {
+    transition: all 250ms ease-in-out;
+    width: 0px;
   }
 }
 

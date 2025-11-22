@@ -13,14 +13,8 @@
 .nav {
   align-items: center;
   display: flex;
-  height: 56px;
+  height: 64px;
   width: 100%;
-}
-
-@media screen and (min-width: 840px) {
-  .nav {
-    height: 64px;
-  }
 }
 
 /* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
@@ -30,11 +24,7 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 0px 0px;
-  }
-
-  .header__logo-link {
-    height: 64px;
-    margin-right: 8px;
+    transition: all 150ms ease-in-out;
   }
 
   .navigation-tabs {
@@ -44,6 +34,7 @@
     margin-top: 0px;
     padding: 0 8px 0;
     justify-content: flex-start;
+    transition: all 100ms ease-in-out;
   }
 
   .nav-tab {
@@ -51,6 +42,7 @@
   }
   .nav .header__logo-link {
     height: 64px;
+    margin-right: 8px;
   }
 }
 
@@ -79,6 +71,8 @@
   white-space: nowrap;
   cursor: pointer;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   z-index: 1;
   background: none;
 }
@@ -234,12 +228,6 @@
   z-index: 1;
 }
 
-@media screen and (min-width: 840px) {
-  .header__logo-link {
-    margin: 0 14px 0 28px;
-  }
-}
-
 .header__logo-link:not(:disabled) {
   color: rgb(95, 99, 104);
 }
@@ -258,6 +246,8 @@
 }
 
 .header-actions {
+  /* max-width: 800px; */
+  flex: 1 1 auto;
   align-items: center;
   display: flex;
   justify-content: flex-end;
