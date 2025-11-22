@@ -102,7 +102,7 @@ class CustomHeader extends HTMLElement {
             this.authContainer.innerHTML = `
                 <div class="profile-menu-container">
                     <button class="icon-button" id="avatar-button">
-                        <img src="/assets/images/banhrang.png" alt="Cài đặt" style="width: 24px; height: 24px; object-fit: contain;">
+                        <img src="/assets/images/banhrang.svg" alt="Cài đặt" style="width: 24px; height: 24px; object-fit: contain;">
                     </button>
 
                     <div class="profile-dropdown" id="profile-dropdown-menu">
@@ -192,22 +192,29 @@ class CustomHeader extends HTMLElement {
         // Chỉ fetch nếu đang đăng nhập
         if (localStorage.getItem("isLoggedIn") !== "true") return;
 
+        // fetchUserData() { <-- Tên hàm mới
         try {
-            const response = await fetch("/assets/json/userData.json");
-            const data = await response.json();
-            const userData = data.User[0];
+            // Lấy chuỗi JSON mà lúc đăng ký/đăng nhập ta đã lưu
+            const storedUser = localStorage.getItem("currentUser"); // <-- ĐÚNG: Gọi Local Storage
 
-            if (userData) {
-                const userNameElement = this.querySelector("#user-name-display");
-                const userEmailElement = this.querySelector("#user-email-display");
+            if (storedUser) {
+                const currentUser = JSON.parse(storedUser); // <-- ĐÚNG: Parse dữ liệu động
 
-                if (userNameElement)
-                    userNameElement.textContent = userData.FullName || userData.Username;
-                if (userEmailElement) userEmailElement.textContent = userData.Email;
+                const nameEl = this.querySelector("#user-name-display");
+                const emailEl = this.querySelector("#user-email-display");
+
+                if (nameEl) {
+                    // Ưu tiên hiển thị username hoặc fullname
+                    nameEl.textContent = currentUser.username || currentUser.fullName || "Người dùng";
+                }
+                if (emailEl) {
+                    emailEl.textContent = currentUser.email || "";
+                }
             }
-        } catch (error) {
-            console.error("Lỗi khi tải dữ liệu:", error);
+        } catch (e) {
+            console.error("Lỗi khi đọc dữ liệu người dùng từ Local Storage:", e);
         }
+        // }
     }
 }
 
