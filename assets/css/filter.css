@@ -148,18 +148,110 @@
 }
 
 /* RESPONSIVE CHO DROPDOWN */
-@media (min-width: 768px) {
+@media (min-width: 941px) {
   .dropdown-content.show {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    width: max-content;
-    max-width: 90vw; /* Giới hạn chiều rộng dropdown không quá màn hình */
+    display: grid;
+
+    /* QUAN TRỌNG 1: Thay auto-fit bằng auto-fill 
+       Để khi không đủ chỗ, các ô sẽ tự động nhảy xuống dòng ngay lập tức */
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+
+    /* QUAN TRỌNG 2: Bỏ 'width: max-content' đi.
+       Thay bằng kích thước cố định hoặc tương đối để trình duyệt biết giới hạn mà wrap dòng */
+    width: 600px; /* Kích thước chuẩn đẹp cho menu desktop */
+
+    /* QUAN TRỌNG 3: Đảm bảo an toàn tuyệt đối */
+    max-width: 90vw; /* Nếu màn hình nhỏ hơn 600px (nhưng > 768px), nó sẽ co lại theo màn hình */
+
+    /* Căn chỉnh lại gap cho đẹp */
+    gap: 8px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 940px) {
   /* Đảm bảo dropdown không bị tràn màn hình nhỏ */
   .dropdown-content {
     min-width: 150px;
     max-width: 90vw;
   }
+}
+
+.ranking-container.filter-bar-scroll-container {
+  display: flex;
+  flex-wrap: wrap; /* Quan trọng: Để các nút tự xuống dòng */
+  gap: 8px;
+  height: auto !important;
+  overflow: visible !important;
+  padding-bottom: 10px;
+}
+
+/* 2. Logic "Mở rộng hàng" (Accordion) */
+/* Khi dropdown mở (.show), mục cha sẽ chiếm trọn 100% chiều ngang */
+.ranking-container .platform-item.dropdown:has(.dropdown-content.show) {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Xếp nút cha ở trên, menu con ở dưới */
+  align-items: flex-start;
+  margin-bottom: 8px;
+  /* border-bottom: 1px solid #eee; Optional: Thêm dòng kẻ mờ ngăn cách nếu thích */
+  padding-bottom: 8px;
+}
+
+/* 3. Container chứa các nút con (ẩn khung, hiện nút) */
+.ranking-container .dropdown-content.show {
+  /* Reset vị trí để nằm ngay dưới nút cha */
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+
+  /* Xóa bỏ style của popup (bóng đổ, khung viền to) */
+  box-shadow: none !important;
+  border: none !important;
+  background-color: transparent !important;
+
+  /* Căn chỉnh khoảng cách */
+  padding: 12px 0 0 20px; /* Thụt vào 20px so với nút cha cho dễ nhìn */
+  margin: 0;
+
+  /* Dàn trang các nút con */
+  display: flex !important;
+  flex-wrap: wrap; /* Cho phép nút con xuống dòng nếu nhiều quá */
+  gap: 8px; /* Khoảng cách giữa các nút con */
+}
+
+/* 4. ĐỒNG BỘ NÚT CON VỚI NÚT CHA */
+/* Đảm bảo nút con giữ nguyên style gốc của .platform-button */
+.ranking-container .dropdown-content .platform-button {
+  /* Các thuộc tính này đảm bảo nó giống hệt nút bên ngoài */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 999px; /* Bo tròn hình viên thuốc */
+  color: #333;
+  font-size: 16px;
+
+  /* Kích thước tự động theo chữ */
+  width: auto;
+  min-width: auto;
+}
+
+/* 5. Hiệu ứng Hover cho nút con (Đồng bộ) */
+.ranking-container .dropdown-content .platform-button:hover {
+  background-color: #f5f5f5;
+  border-color: #ccc;
+}
+
+/* 6. Hiệu ứng Active cho nút con (Nếu nút con được chọn) */
+.ranking-container .dropdown-content .platform-button.is-active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* 7. Xử lý nút Cha khi đang mở dropdown (Tùy chọn: làm đậm viền để biết đang mở) */
+.ranking-container
+  .platform-item.dropdown:has(.dropdown-content.show)
+  > .platform-button {
+  border-color: #007bff;
+  background-color: #f0f8ff; /* Màu xanh rất nhạt */
 }
