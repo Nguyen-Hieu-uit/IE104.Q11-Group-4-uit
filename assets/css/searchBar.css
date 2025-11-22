@@ -3,7 +3,7 @@
 }
 
 .search__box {
-  flex: 1 1 0;
+  flex: 0 1 auto;
 }
 
 .search__box {
@@ -11,7 +11,7 @@
   display: flex;
   position: relative;
   /* Desktop/tablet: co dãn theo chiều ngang màn hình */
-  width: clamp(240px, 40vw, 500px);
+  width: clamp(160px, 25vw, 500px);
   /* 1. HIỆU ỨNG CHUYỂN TỪ INPUT SANG BOX */
   border-radius: 50px; /* Tạo bo góc cho cả khối */
   border: 1px solid #575756; /* Tạo viền cho cả khối */
@@ -63,7 +63,7 @@
 }
 
 /* Responsive: trên màn nhỏ, thu gọn thanh search chỉ còn icon kính lúp */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .search__box {
     width: 40px;
     min-width: 40px;

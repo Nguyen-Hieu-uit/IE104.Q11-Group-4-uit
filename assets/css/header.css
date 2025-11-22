@@ -1,10 +1,13 @@
 .header {
   background-color: #fff;
   position: fixed;
+  display: flex;
   top: 0;
   transition: box-shadow 0.2s ease-in-out;
   width: 100%;
   z-index: 3;
+  -moz-box-align: center;
+  align-items: center;
 }
 
 .nav {
@@ -23,19 +26,20 @@
 /* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
 @media screen and (max-width: 950px) {
   .nav {
-    /* height: 64px; */
+    height: 128px;
     flex-wrap: wrap;
     align-items: center;
     padding: 0px 0px;
   }
 
   .header__logo-link {
+    height: 64px;
     margin-right: 8px;
   }
 
   .navigation-tabs {
     background-color: #fff;
-    order: 2;
+    order: 1;
     width: 100%;
     margin-top: 0px;
     padding: 0 8px 0;
@@ -44,6 +48,9 @@
 
   .nav-tab {
     flex: 0 0 auto;
+  }
+  .nav .header__logo-link {
+    height: 64px;
   }
 }
 
@@ -161,7 +168,6 @@
     opacity: 0;
     width: 0%;
   }
-
   100% {
     opacity: 1;
     width: 100%;
@@ -254,12 +260,16 @@
 .header-actions {
   align-items: center;
   display: flex;
+  justify-content: flex-end;
   margin: 0 10px 0 auto;
 }
 
 /* icon-button */
 .icon-button {
-  display: inline-block;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   box-sizing: border-box;
   border: none;
@@ -301,7 +311,6 @@
 .tab.tab--active {
   color: #01875f;
 }
-
 .tab.tab--active .tab__underline-bar {
   display: block;
 }
@@ -324,11 +333,7 @@
   width: 32px;
 }
 
-.header-actions .search__box {
-  flex: 0 1 auto;
-}
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 650px) {
   .header__logo-link span {
     display: none;
   }
