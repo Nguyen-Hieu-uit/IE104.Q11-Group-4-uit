@@ -36,7 +36,7 @@ class AuthModal extends HTMLElement {
         .form-group label { font-size: 13px; font-weight: 500; color: #202124; }
         .form-group input, .form-group select { padding: 10px 12px; border: 1px solid #dadce0; border-radius: 4px; font-size: 14px; outline: none; transition: border 0.2s; font-family: inherit; }
         .form-group input:focus, .form-group select:focus { border: 1px solid #C98747; box-shadow: 0 0 0 1px #C98747; }
-        .submit-btn { background-color: #C98747; color: white; padding: 10px 24px; border: none; border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 8px; transition: background 0.2s; font-family: "Google Sans", Roboto, Arial, sans-serif; }
+        .submit-btn { background-color: #C98747; color: white; padding: 10px 24px; border: none; border-radius: 4px; font-size: 14px; font-weight: 500; cursor: pointer; margin-top: 8px; transition: background 0.2s; text-align: center; font-family: "Google Sans", Roboto, Arial, sans-serif; }
         .submit-btn:hover { background-color: #a36e3a; box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15); }
         .switch-text { text-align: center; margin-top: 16px; font-size: 14px; color: #5f6368; }
         .switch-text span { color: #C98747; cursor: pointer; font-weight: 500; }
@@ -129,112 +129,133 @@ class AuthModal extends HTMLElement {
   }
 
   setupEvents() {
-    const overlay = this.querySelector('#auth-overlay');
-    const closeBtn = this.querySelector('#close-modal');
-    const tabBtns = this.querySelectorAll('.tab-btn');
-    const forms = this.querySelectorAll('.auth-form');
-    const switchLinks = this.querySelectorAll('.switch-text span');
+    const overlay = this.querySelector("#auth-overlay");
+    const closeBtn = this.querySelector("#close-modal");
+    const tabBtns = this.querySelectorAll(".tab-btn");
+    const forms = this.querySelectorAll(".auth-form");
+    const switchLinks = this.querySelectorAll(".switch-text span");
     const loginTrigger = this.querySelector('button[data-action="login"]');
-    const registerTrigger = this.querySelector('button[data-action="register"]');
+    const registerTrigger = this.querySelector(
+      'button[data-action="register"]'
+    );
 
     // Switch Tab Logic
     const switchTab = (targetId) => {
-      tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.target === targetId));
-      forms.forEach(form => form.classList.toggle('active', form.id === targetId));
+      tabBtns.forEach((btn) =>
+        btn.classList.toggle("active", btn.dataset.target === targetId)
+      );
+      forms.forEach((form) =>
+        form.classList.toggle("active", form.id === targetId)
+      );
       // Reset errors
-      this.querySelector('#pass-error').style.display = 'none';
-      this.querySelector('#login-error').style.display = 'none';
+      this.querySelector("#pass-error").style.display = "none";
+      this.querySelector("#login-error").style.display = "none";
     };
 
-    const openModal = (tabId) => { switchTab(tabId); overlay.classList.add('open'); };
-    const closeModal = () => overlay.classList.remove('open');
+    const openModal = (tabId) => {
+      switchTab(tabId);
+      overlay.classList.add("open");
+    };
+    const closeModal = () => overlay.classList.remove("open");
 
-    if (loginTrigger) loginTrigger.addEventListener('click', () => openModal('login-form'));
-    if (registerTrigger) registerTrigger.addEventListener('click', () => openModal('register-form'));
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    if (loginTrigger)
+      loginTrigger.addEventListener("click", () => openModal("login-form"));
+    if (registerTrigger)
+      registerTrigger.addEventListener("click", () =>
+        openModal("register-form")
+      );
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal();
+    });
 
-    tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.target)));
-    switchLinks.forEach(link => link.addEventListener('click', () => switchTab(link.dataset.switch)));
+    tabBtns.forEach((btn) =>
+      btn.addEventListener("click", () => switchTab(btn.dataset.target))
+    );
+    switchLinks.forEach((link) =>
+      link.addEventListener("click", () => switchTab(link.dataset.switch))
+    );
 
     // --- XỬ LÝ ĐĂNG KÝ ---
-    const registerForm = this.querySelector('#register-form');
-    registerForm.addEventListener('submit', (e) => {
+    const registerForm = this.querySelector("#register-form");
+    registerForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const fd = new FormData(registerForm);
-      const password = fd.get('password');
-      const confirmPass = fd.get('confirm_password');
+      const password = fd.get("password");
+      const confirmPass = fd.get("confirm_password");
 
       // 1. Kiểm tra mật khẩu trùng khớp
       if (password !== confirmPass) {
-        this.querySelector('#pass-error').style.display = 'block';
+        this.querySelector("#pass-error").style.display = "block";
         return;
       }
 
       // 2. Tạo object user mới
       const newUser = {
-        username: fd.get('username').trim(),
-        email: fd.get('email').trim(),
+        username: fd.get("username").trim(),
+        email: fd.get("email").trim(),
         password: password,
-        fullName: fd.get('fullname').trim(),
-        age: fd.get('age'),
-        gender: fd.get('gender'),
-        location: fd.get('location').trim(),
+        fullName: fd.get("fullname").trim(),
+        age: fd.get("age"),
+        gender: fd.get("gender"),
+        location: fd.get("location").trim(),
         language: "Tiếng Việt", // Mặc định
-        theme: "Sáng" // Mặc định
+        theme: "Sáng", // Mặc định
       };
 
       // 3. Lưu vào danh sách users trong localStorage (Giả lập DB)
-      let users = JSON.parse(localStorage.getItem('users_db') || '[]');
+      let users = JSON.parse(localStorage.getItem("users_db") || "[]");
 
       // Check xem username tồn tại chưa
-      const exists = users.find(u => u.username === newUser.username);
+      const exists = users.find((u) => u.username === newUser.username);
       if (exists) {
-        alert('Tên hiển thị này đã được sử dụng!');
+        alert("Tên hiển thị này đã được sử dụng!");
         return;
       }
 
       users.push(newUser);
-      localStorage.setItem('users_db', JSON.stringify(users));
+      localStorage.setItem("users_db", JSON.stringify(users));
 
       // 4. Tự động đăng nhập luôn sau khi đăng ký
       this.performLogin(newUser);
 
-      alert('Đăng ký thành công!');
+      alert("Đăng ký thành công!");
       closeModal();
     });
 
     // --- XỬ LÝ ĐĂNG NHẬP ---
-    const loginForm = this.querySelector('#login-form');
-    loginForm.addEventListener('submit', (e) => {
+    const loginForm = this.querySelector("#login-form");
+    loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const fd = new FormData(loginForm);
-      const username = fd.get('login_username').trim();
-      const password = fd.get('login_password');
+      const username = fd.get("login_username").trim();
+      const password = fd.get("login_password");
 
       // 1. Lấy danh sách user từ localStorage
-      let users = JSON.parse(localStorage.getItem('users_db') || '[]');
+      let users = JSON.parse(localStorage.getItem("users_db") || "[]");
 
       // 2. Tìm user khớp thông tin
-      const user = users.find(u => u.username === username && u.password === password);
+      const user = users.find(
+        (u) => u.username === username && u.password === password
+      );
 
       if (user) {
         this.performLogin(user);
         closeModal();
       } else {
-        this.querySelector('#login-error').style.display = 'block';
+        this.querySelector("#login-error").style.display = "block";
       }
     });
   }
 
   performLogin(user) {
     // Lưu thông tin user hiện tại vào localStorage
-    localStorage.setItem('isLoggedIn', 'true');
-    localStorage.setItem('currentUser', JSON.stringify(user)); // Lưu toàn bộ thông tin user để trang setting dùng
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("currentUser", JSON.stringify(user)); // Lưu toàn bộ thông tin user để trang setting dùng
 
     // Phát sự kiện để header cập nhật UI
-    window.dispatchEvent(new Event('auth-change'));
+    window.dispatchEvent(new Event("auth-change"));
   }
 }
 
-customElements.define('auth-modal', AuthModal);
+customElements.define("auth-modal", AuthModal);
