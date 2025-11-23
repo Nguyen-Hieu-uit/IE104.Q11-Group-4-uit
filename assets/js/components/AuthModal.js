@@ -25,7 +25,7 @@ class AuthModal extends HTMLElement {
         .modal-logo-wrapper { display: flex; justify-content: center; margin-bottom: 24px; }
         .modal-logo { width: 64px; height: auto; object-fit: contain; }
         .auth-tabs { display: flex; margin-bottom: 24px; border-bottom: 1px solid #dadce0; }
-        .tab-btn { flex: 1; padding: 12px; background: none; border: none; font-size: 16px; font-weight: 500; color: #5f6368; cursor: pointer; position: relative; font-family: "Google Sans", Roboto, Arial, sans-serif; }
+        .tab-btn { flex: 1; padding: 12px; background: none; border: none; font-size: 16px; font-weight: 500; color: #5f6368; cursor: pointer; position: relative; text-align: center; font-family: "Google Sans", Roboto, Arial, sans-serif; }
         .tab-btn:hover { color: #202124; background-color: #f8f9fa; }
         .tab-btn.active { color: #C98747; }
         .tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background-color: #C98747; border-top-left-radius: 3px; border-top-right-radius: 3px; }
