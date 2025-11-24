@@ -71,7 +71,7 @@
     height: 40px;
     border-radius: 50px;
     padding: 0;
-    transition: all 0ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
 
   #search-input {
@@ -82,26 +82,31 @@
     background-position: center;
     background-size: 18px 18px;
     font-size: 0; /* ẩn text khi chưa focus */
-    transition: all 25ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
 
-  #search-input:focus,
-  #search-input:hover {
+  #search-input:focus {
     width: 100%;
     padding: 0px 0px 0px 0px;
     font-size: 14px;
     background-position: 100%;
-    transition: all 25ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
 
-  .search__box:focus-within,
   .search__box:hover {
+    /* max-width: 100%;
+    width: 100%; */
+    border: 2px solid #575756;
+    border-radius: 50px;
+    transition: all 100ms ease-in-out;
+  }
+  .search__box:focus-within {
     max-width: 100%;
     width: 100%;
     border: 1px solid transparent;
     border-bottom: 1px solid #575756;
     border-radius: 0;
-    transition: all 5ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
 
   /* Ẩn nút clear khi chưa có input*/
@@ -111,9 +116,7 @@
   }
   /* Ẩn các nút khác khi search box được focus hoặc hover */
   .header-actions .search__box:focus-within ~ .icon-button,
-  .header-actions .search__box:hover ~ .icon-button,
-  .header-actions .search__box:focus-within ~ #auth-container,
-  .header-actions .search__box:hover ~ #auth-container {
+  .header-actions .search__box:focus-within ~ #auth-container {
     transition: all 250ms ease-in-out;
     width: 0px;
   }
