@@ -20,7 +20,7 @@
 /* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
 @media screen and (max-width: 950px) {
   .nav {
-    height: 128px;
+    height: auto;
     flex-wrap: wrap;
     align-items: center;
     padding: 0px 0px;
@@ -38,6 +38,7 @@
   }
 
   .nav-tab {
+    height: 48px;
     flex: 0 0 auto;
   }
   .nav .header__logo-link {
@@ -101,11 +102,6 @@
   padding-left: 16px;
   text-transform: none;
   min-width: auto;
-}
-
-.nav-tab {
-  height: 64px;
-  height: var(--mdc-primary-navigation-tab-container-height, 64px);
 }
 
 .nav-tab__inner {

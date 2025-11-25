@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   })();
 
+  // Lấy Id các
   const inputElement = document.getElementById("search-input");
   const clearButton = document.getElementById("clear-button");
   const searchButton = document.getElementById("search-button");
