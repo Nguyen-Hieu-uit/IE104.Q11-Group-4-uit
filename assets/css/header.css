@@ -17,6 +17,10 @@
   width: 100%;
 }
 
+.nav-tab {
+  height: 64px;
+}
+
 /* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
 @media screen and (max-width: 950px) {
   .nav {
