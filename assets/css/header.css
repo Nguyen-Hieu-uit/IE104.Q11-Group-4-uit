@@ -17,40 +17,7 @@
   width: 100%;
 }
 
-.nav-tab {
-  height: 64px;
-}
-
-/* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
-@media screen and (max-width: 950px) {
-  .nav {
-    height: auto;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 0px 0px;
-    transition: all 150ms ease-in-out;
-  }
-
-  .navigation-tabs {
-    background-color: #fff;
-    order: 1;
-    width: 100%;
-    margin-top: 0px;
-    padding: 0 8px 0;
-    justify-content: flex-start;
-    transition: all 100ms ease-in-out;
-  }
-
-  .nav-tab {
-    height: 48px;
-    flex: 0 0 auto;
-  }
-  .nav .header__logo-link {
-    height: 64px;
-    margin-right: 8px;
-  }
-}
-
+/* Các tab điều hướng (Trò chơi, Ứng dụng, Trẻ em) */
 .navigation-tabs {
   position: relative;
   display: flex;
@@ -60,6 +27,7 @@
 }
 
 .nav-tab {
+  height: 64px;
   min-width: 90px;
   padding-right: 24px;
   padding-left: 24px;
@@ -210,6 +178,7 @@
   opacity: 1;
 }
 
+/* Header logo */
 .header__logo-link {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -237,6 +206,36 @@
   height: 64px;
   width: auto;
   display: block;
+}
+
+/* Responsive header: dưới 950px, cho navigation-tabs xuống hàng dưới */
+@media screen and (max-width: 950px) {
+  .nav {
+    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0px 0px;
+    transition: all 150ms ease-in-out;
+  }
+
+  .navigation-tabs {
+    background-color: #fff;
+    order: 1;
+    width: 100%;
+    margin-top: 0px;
+    padding: 0 8px 0;
+    justify-content: flex-start;
+    transition: all 100ms ease-in-out;
+  }
+
+  .nav-tab {
+    height: 48px;
+    flex: 0 0 auto;
+  }
+  .nav .header__logo-link {
+    height: 64px;
+    margin-right: 8px;
+  }
 }
 
 .brand-logo {
