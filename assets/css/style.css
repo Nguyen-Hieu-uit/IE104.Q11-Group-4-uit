@@ -2636,6 +2636,7 @@ img {
   color: rgb(95, 99, 104);
 }
 
+/* Biến thể button secondary (nút chữ, không nền, dùng cho action phụ) */
 .button--secondary {
   font-size: 0.875rem;
   letter-spacing: 0.0107142857em;
@@ -2679,6 +2680,7 @@ img {
   color: rgb(26, 115, 232);
 }
 
+/* Nhóm hiệu ứng ripple chung cho button/chip (sóng nước khi click) */
 .ripple--bounded {
   position: absolute;
   box-sizing: content-box;
@@ -2800,6 +2802,7 @@ img {
   margin-top: 4px;
 }
 
+/* Nhóm sao hiển thị (tĩnh) và sao tương tác trong rating/review */
 .star-rating,
 .rating-display__stars-wrapper,
 .review-rating__stars {
@@ -2876,6 +2879,7 @@ img {
   min-width: 160px;
 }
 
+/* Tuỳ chọn ripple theo từng kiểu button (primary, typography, rounded) */
 .button--theme-green .ripple--bounded {
   border-radius: 4px;
 }
@@ -2951,10 +2955,12 @@ img {
   background-color: #fff;
 }
 
+/* Biến thể button text màu sáng, dùng trên nền tối/ảnh */
 .button--text-light:not(:disabled) {
   color: #fff;
 }
 
+/* Utility hiển thị phần tử chỉ trên desktop và đẩy sang phải */
 .show-desktop-push-right {
   display: none;
 }
@@ -3003,6 +3009,7 @@ img {
   color: rgb(95, 99, 104);
 }
 
+/* Icon bên trong button (trước/sau label) */
 .button .button__icon {
   margin-left: 0;
   margin-right: 8px;
@@ -3029,6 +3036,7 @@ img {
   height: 1rem;
 }
 
+/* Hiển thị inline-flex trên mobile, ẩn trên desktop (ví dụ nút hành động) */
 .show-mobile-inline-flex {
   display: inline-flex;
 }
@@ -3045,6 +3053,7 @@ img {
   grid-template-columns: 1fr;
 }
 
+/* Padding bottom responsive cho các block nội dung (nhỏ -> lớn theo breakpoint) */
 .padding-bottom--responsive-medium {
   padding-bottom: 16px;
 }
@@ -3087,11 +3096,13 @@ img {
   color: rgb(32, 33, 36);
 }
 
+/* Sao hiển thị trong khối tổng quan rating (khác với sao tương tác) */
 .rating-display__star {
   height: 16px;
   width: 16px;
 }
 
+/* Icon sao khi ở trạng thái đã được chọn/filled */
 .star-rating__icon--filled {
   color: #cc8a45;
   fill: #cc8a45;
@@ -3102,12 +3113,14 @@ img {
   color: #cc8a45;
 }
 
+/* Thanh bar thể hiện phân bố số sao (5 sao, 4 sao,...) */
 .rating-bar {
   display: grid;
   grid-template-columns: max-content auto;
   align-items: center;
 }
 
+/* Label mô tả mức sao tương ứng cho mỗi hàng rating bar */
 .rating-bar__label {
   line-height: 1rem;
   font-size: 0.75rem;
@@ -3116,6 +3129,7 @@ img {
   padding-right: 16px;
 }
 
+/* Nền thanh rating bar (track) */
 .rating-bar__track {
   border-radius: 9999px;
   background-color: rgb(232, 234, 237);
@@ -3126,15 +3140,18 @@ img {
   background-color: rgb(232, 234, 237);
 }
 
+/* Phần progress đã lấp đầy trên thanh rating bar */
 .rating-bar__progress--filled {
   background-color: #cc8a45;
 }
 
+/* Lớp con dùng để fill phần progress bên trong track */
 .rating-bar__progress {
   height: 100%;
   border-radius: inherit;
 }
 
+/* Label hiển thị tổng số lượt đánh giá */
 .total-reviews-label {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
