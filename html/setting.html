@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
-    <meta name="description" content="Cài đặt AppMarket" />
-    <meta
-      name="keywords"
-      content="cài đặt, cài đặt ứng dụng, cài đặt trò chơi"
-    />
-    <meta name="author" content="AppMarket" />
-    <title>Cài đặt</title>
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/styles_setting.css" />
-    <link rel="stylesheet" href="/assets/css/SettingTab.css" />
-    <link rel="stylesheet" href="/assets/css/searchBar.css" />
-    <script type="module" src="/assets/js/components/customheader.js"></script>
-    <script type="module" src="/assets/js/components/customfooter.js"></script>
-    <script type="module" src="/assets/js/components/AuthModal.js"></script>
-  </head>
 
-  <body>
-    <link rel="stylesheet" href="/assets/css/theme.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+  <meta name="description" content="Cài đặt AppMarket" />
+  <meta name="keywords" content="cài đặt, cài đặt ứng dụng, cài đặt trò chơi" />
+  <meta name="author" content="AppMarket" />
+  <title>Cài đặt</title>
 
-    <script>
-      (function () {
-        // Lấy chủ đề từ localStorage, mặc định là 'Sáng'
-        const theme = localStorage.getItem("theme") || "Sáng";
+  <!-- CSS chính -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/styles_setting.css" />
+  <link rel="stylesheet" href="/assets/css/SettingTab.css" />
+  <link rel="stylesheet" href="/assets/css/searchBar.css" />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
 
-        // Áp dụng class Sáng/Tối NGAY LẬP TỨC cho <body>
-        // 'Mùa' cũng dùng 'light-theme'
-        document.body.className =
-          theme === "Tối" ? "dark-theme" : "light-theme";
-      })();
-    </script>
+  <!-- Import Web Components -->
+  <script type="module" src="/assets/js/components/customheader.js"></script>
+  <script type="module" src="/assets/js/components/customfooter.js"></script>
+  <script type="module" src="/assets/js/components/AuthModal.js"></script>
+</head>
 
-    <custom-header></custom-header>
+<body>
 
-    <div class="main-content main-content-spacing">
-      <h1>Cài đặt</h1>
+  <!-- Header của trang -->
+  <custom-header></custom-header>
 
-      <main class="settings-container-seamless">
-        <section id="full-content-area"></section>
-      </main>
-    </div>
+  <!-- Nội dung chính của trang -->
+  <div class="main-content main-content-spacing">
 
-    <script src="/assets/js/theme-manager.js"></script>
-    <script src="/assets/js/script_setting.js"></script>
-    <script src="/assets/js/SettingTab.js"></script>
-    <script src="/assets/js/searchBar.js"></script>
-    <script src="/assets/js/headerShadow.js"></script>
+    <!-- Tiêu đề trang -->
+    <h1>Cài đặt</h1>
 
-    <custom-footer></custom-footer>
-  </body>
+    <!-- Container chính cho các mục cài đặt -->
+    <main class="settings-container-seamless">
+      <!-- Section chứa toàn bộ nội dung cài đặt được render động -->
+      <section id="full-content-area"></section>
+    </main>
+  </div>
+
+  <!-- Footer chung của trang, sử dụng web component -->
+  <custom-footer></custom-footer>
+
+  <!-- Các file JS -->
+  <script src="/assets/js/theme-manager.js"></script>
+  <script src="/assets/js/script_setting.js"></script>
+  <script src="/assets/js/SettingTab.js"></script>
+  <script src="/assets/js/searchBar.js"></script>
+  <script src="/assets/js/headerShadow.js"></script>
+</body>
+
 </html>

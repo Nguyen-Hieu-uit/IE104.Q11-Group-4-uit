@@ -1,180 +1,152 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/assets/images/logo.png" />
-    <meta name="description" content="Trò chơi điện thoại, trò chơi sinh tồn" />
-    <meta
-      name="keywords"
-      content="trò chơi, trò chơi điện thoại, trò chơi sinh tồn"
-    />
-    <meta name="author" content="AppMarket" />
-    <title>AppMarket | Tải Trò Chơi Và Ứng Dụng Yêu Thích</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/filter.css" />
-    <link rel="stylesheet" href="/assets/css/carousel.css" />
-    <link rel="stylesheet" href="/assets/css/ranking-list.css" />
-    <link rel="stylesheet" href="/assets/css/download_demo.css" />
-    <link rel="stylesheet" href="/assets/css/carousel-scroll.css" />
-    <link rel="stylesheet" href="/assets/css/searchBar.css" />
-    <link rel="stylesheet" href="/assets/css/theme.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+  <meta name="description" content="Trò chơi điện thoại, trò chơi sinh tồn" />
+  <meta name="keywords" content="trò chơi, trò chơi điện thoại, trò chơi sinh tồn" />
+  <meta name="author" content="AppMarket" />
+  <title>AppMarket | Tải Trò Chơi Và Ứng Dụng Yêu Thích</title>
 
-    <script type="module" src="/assets/js/components/customheader.js"></script>
-    <script type="module" src="/assets/js/components/customfooter.js"></script>
-    <script type="module" src="/assets/js/components/HomeFilter.js"></script>
-    <script type="module" src="/assets/js/components/MainCarousel.js"></script>
-    <script type="module" src="/assets/js/components/RankingModal.js"></script>
-    <script type="module" src="/assets/js/components/AuthModal.js"></script>
-  </head>
+  <!-- CSS chính và bổ sung -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/filter.css" />
+  <link rel="stylesheet" href="/assets/css/carousel.css" />
+  <link rel="stylesheet" href="/assets/css/ranking-list.css" />
+  <link rel="stylesheet" href="/assets/css/download_demo.css" />
+  <link rel="stylesheet" href="/assets/css/carousel-scroll.css" />
+  <link rel="stylesheet" href="/assets/css/searchBar.css" />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
 
-  <body>
-    <script>
-      (function () {
-        const theme = localStorage.getItem("theme") || "Sáng";
-        document.body.className =
-          theme === "Tối" ? "dark-theme" : "light-theme";
-      })();
-    </script>
+  <!-- Import Web Components -->
+  <script type="module" src="/assets/js/components/customheader.js"></script>
+  <script type="module" src="/assets/js/components/customfooter.js"></script>
+  <script type="module" src="/assets/js/components/HomeFilter.js"></script>
+  <script type="module" src="/assets/js/components/MainCarousel.js"></script>
+  <script type="module" src="/assets/js/components/RankingModal.js"></script>
+  <script type="module" src="/assets/js/components/AuthModal.js"></script>
+</head>
 
-    <custom-header></custom-header>
+<body>
 
-    <div class="main-content main-content-spacing">
-      <div class="main-content-inner">
-        <home-filter></home-filter>
+  <!-- Header chung, Web Component -->
+  <custom-header></custom-header>
 
-        <div class="main-page-content">
-          <main-carousel></main-carousel>
+  <!-- Nội dung chính trang Home -->
+  <div class="main-content main-content-spacing">
+    <div class="main-content-inner">
 
-          <div class="app-section">
-            <div>
-              <section>
-                <header class="section-header-spacing section-header-margin">
-                  <div class="section-banner-title">
-                    <span>Tận hưởng trò chơi yêu thích trên màn hình lớn</span>
-                  </div>
-                  <div class="section-banner-description">
-                    <span>Trò chơi trên PC</span>
-                  </div>
-                </header>
-                <div class="app-list-container">
-                  <div class="app-list-wrapper app-list-wrapper--pc">
-                    <div class="content-wrapper">
-                      <button class="carousel-btn left hidden">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 0 24 24"
-                          width="24px"
-                          fill="#000000"
-                        >
-                          <path
-                            d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                          />
-                        </svg>
-                      </button>
-                      <button class="carousel-btn right">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 0 24 24"
-                          width="24px"
-                          fill="#000000"
-                        >
-                          <path
-                            d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-                          />
-                        </svg>
-                      </button>
-                      <div
-                        class="horizontal-scroll app-row app-list-wrapper--pc"
-                        id="pc-games-row"
-                      ></div>
-                    </div>
+      <!-- Bộ lọc ở trang Home -->
+      <home-filter></home-filter>
+
+      <!-- Phần nội dung chính của trang -->
+      <div class="main-page-content">
+
+        <!-- Carousel chính hiển thị hình ảnh nổi bật -->
+        <main-carousel></main-carousel>
+
+        <!-- Các section ứng dụng/trò chơi -->
+        <div class="app-section">
+          <div>
+            <section>
+              <!-- Header của section -->
+              <header class="section-header-spacing section-header-margin">
+                <div class="section-banner-title">
+                  <span>Tận hưởng trò chơi yêu thích trên màn hình lớn</span>
+                </div>
+                <div class="section-banner-description">
+                  <span>Trò chơi trên PC</span>
+                </div>
+              </header>
+
+              <!-- Container danh sách app -->
+              <div class="app-list-container">
+                <div class="app-list-wrapper app-list-wrapper--pc">
+                  <div class="content-wrapper">
+
+                    <!-- Nút điều khiển carousel trái -->
+                    <button class="carousel-btn left hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#000000">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                      </svg>
+                    </button>
+
+                    <!-- Nút điều khiển carousel phải -->
+                    <button class="carousel-btn right">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#000000">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                      </svg>
+                    </button>
+
+                    <!-- Dòng ứng dụng có thể scroll ngang -->
+                    <div class="horizontal-scroll app-row app-list-wrapper--pc" id="pc-games-row"></div>
                   </div>
                 </div>
-              </section>
-            </div>
+              </div>
+            </section>
           </div>
+        </div>
 
-          <div class="app-section">
-            <div>
-              <section>
-                <header class="section-header-spacing section-header-margin">
-                  <div class="section-banner-title">
-                    <span>Tận hưởng trò chơi yêu thích trên màn hình lớn</span>
-                  </div>
-                  <div class="section-banner-description">
-                    <span>Trò chơi trên PC</span>
-                  </div>
-                </header>
-                <div class="app-list-container">
-                  <div class="app-list-wrapper app-list-wrapper--pc">
-                    <div class="content-wrapper">
-                      <button class="carousel-btn left hidden">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 0 24 24"
-                          width="24px"
-                          fill="#000000"
-                        >
-                          <path
-                            d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                          />
-                        </svg>
-                      </button>
-                      <button class="carousel-btn right">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          height="24px"
-                          viewBox="0 0 24 24"
-                          width="24px"
-                          fill="#000000"
-                        >
-                          <path
-                            d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-                          />
-                        </svg>
-                      </button>
-                      <div
-                        class="horizontal-scroll app-row app-list-wrapper--pc"
-                        id="pc-games-row-2"
-                      ></div>
-                    </div>
+        <!-- Section PC Games thứ 2 (giống section trên) -->
+        <div class="app-section">
+          <div>
+            <section>
+              <header class="section-header-spacing section-header-margin">
+                <div class="section-banner-title">
+                  <span>Tận hưởng trò chơi yêu thích trên màn hình lớn</span>
+                </div>
+                <div class="section-banner-description">
+                  <span>Trò chơi trên PC</span>
+                </div>
+              </header>
+
+              <div class="app-list-container">
+                <div class="app-list-wrapper app-list-wrapper--pc">
+                  <div class="content-wrapper">
+                    <button class="carousel-btn left hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#000000">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                      </svg>
+                    </button>
+                    <button class="carousel-btn right">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                        fill="#000000">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                      </svg>
+                    </button>
+                    <div class="horizontal-scroll app-row app-list-wrapper--pc" id="pc-games-row-2"></div>
                   </div>
                 </div>
-              </section>
-            </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <custom-footer></custom-footer>
-    <ranking-modal></ranking-modal>
+  <!-- Footer chung -->
+  <custom-footer></custom-footer>
 
-    <script src="./assets/js/homeData.js"></script>
-    <script src="./assets/js/homeRender.js"></script>
-    <script src="./assets/js/searchBar.js"></script>
-    <script src="./assets/js/login.js"></script>
-    <script src="./assets/js/register.js"></script>
-    <script src="./assets/js/carousel-scroll.js"></script>
-    <script src="./assets/js/navigation.js"></script>
-    <script src="/assets/js/SettingTab.js"></script>
-    <script src="/assets/js/theme-manager.js"></script>
+  <!-- Modal bảng xếp hạng -->
+  <ranking-modal></ranking-modal>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.getElementById("header");
-        if (header) {
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 10) header.classList.add("scrolled");
-            else header.classList.remove("scrolled");
-          });
-        }
-      });
-    </script>
-  </body>
+  <!-- Các file JS -->
+  <script src="./assets/js/homeData.js"></script>
+  <script src="./assets/js/homeRender.js"></script>
+  <script src="./assets/js/searchBar.js"></script>
+  <script src="./assets/js/login.js"></script>
+  <script src="./assets/js/register.js"></script>
+  <script src="./assets/js/carousel-scroll.js"></script>
+  <script src="./assets/js/navigation.js"></script>
+  <script src="/assets/js/SettingTab.js"></script>
+  <script src="/assets/js/theme-manager.js"></script>
+  <script src="/assets/js/headerShadow.js"></script>
+</body>
+
 </html>

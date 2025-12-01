@@ -4,99 +4,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="keywords" content="trò chơi, trò chơi điện thoại, ứng dụng đa dạng" />
   <meta name="author" content="AppMarket" />
   <meta name="description" content="Real Flight Simulator" />
+  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
+  <title>Real Flight Simulator</title>
+
+  <!-- CSS chính của trang -->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/SettingTab.css" />
   <link rel="stylesheet" href="/assets/css/download_demo.css" />
   <link rel="stylesheet" href="/assets/css/searchBar.css" />
   <link rel="stylesheet" href="/assets/css/carousel-scroll.css" />
+  <link rel="stylesheet" href="/assets/css/theme.css" />
 
-
+  <!-- Import Web Components -->
   <script type="module" src="/assets/js/components/customheader.js"></script>
   <script type="module" src="/assets/js/components/customfooter.js"></script>
+  <script type="module" src="/assets/js/components/AuthModal.js"></script>
   <script type="module" src="/assets/js/components/app-header.js"></script>
+
+  <!-- Script các component trò chơi -->
   <script src="/assets/js/components/screenshot-carousel.js"></script>
   <script src="/assets/js/components/app-content-section.js"></script>
   <script src="/assets/js/components/star-rating.js"></script>
   <script src="/assets/js/components/app-reviews-section.js"></script>
   <script src="/assets/js/components/GameDescription.js" defer></script>
   <script src="/assets/js/components/GameSidebar.js" defer></script>
-  <script src="/assets/js/searchBar.js"></script>
-  <script src="/assets/js/theme-manager.js"></script>
-  <script src="/assets/js/SettingTab.js"></script>
-  <script src="/assets/js/download.js"></script>
-  <link rel="icon" type="image/png" href="/assets/images/logo.png" />
-  <script type="module" src="/assets/js/components/AuthModal.js"></script>
-  <title>Real Flight Simulator</title>
+
 </head>
 
 <body>
-  <link rel="stylesheet" href="/assets/css/theme.css" />
 
-  <script>
-    (function () {
-      // Lấy chủ đề từ localStorage, mặc định là 'Sáng'
-      const theme = localStorage.getItem("theme") || "Sáng";
-
-      // Áp dụng class Sáng/Tối NGAY LẬP TỨC cho <body>
-      // 'Mùa' cũng dùng 'light-theme'
-      document.body.className =
-        theme === "Tối" ? "dark-theme" : "light-theme";
-    })();
-  </script>
-
+  <!-- Header trang -->
   <custom-header></custom-header>
 
+  <!-- Nội dung chính của trang -->
   <div class="main-content main-app-content-spacing">
+
+    <!-- Phần chi tiết nội dung chính -->
     <div class="detail-content__body">
+
+      <!-- Component hiển thị thông tin chính của app -->
       <app-header app-title="RFS - Real Flight Simulator" developer="RORTOS" price="9.000 ₫"
         icon-src="https://play-lh.googleusercontent.com/kwlIDGuHPCwW6YVpmfEELagMBuwFYYdYczT_ueJxu-5YX6A5YlQclOnKsgV-ShlSBg=s48-rw"
         video-poster="https://i.ytimg.com/vi/T7e53yGZw9E/hqdefault.jpg"
         video-src="https://play-games.googleusercontent.com/vp/mp4/1280x720/T7e53yGZw9E.mp4" rating="4,6"
         reviews="196 N bài đánh giá" downloads="5 T+"
         age-rating-src="https://play-lh.googleusercontent.com/EbEX3AN4FC4pu3lsElAHCiksluOVU8OgkgtWC43-wmm_aHVq2D65FmEM97bPexilUAvlAY5_4ARH8Tb3RxQ=w48-h16-rw"
-        tags="Mua trong ứng dụng" download-link="/download-test.txt"></app-header>
+        tags="Mua trong ứng dụng" download-link="/download-test.txt">
+      </app-header>
+
+      <!-- Container hiển thị nội dung chi tiết app -->
       <div class="app-header-content app-header-content-mwdth">
+
+        <!-- Gallery ảnh chụp màn hình -->
         <div class="screenshot-gallery">
           <div class="content-feed">
-            <screenshot-carousel id="my-app-carousel"
-              data-images='[
-                           ["https://play-lh.googleusercontent.com/nvW4_TbXpA7sNAFCpH-__5Rph0Ti6pVUB3PFvrEdcewhrbf5SYNcdjga7AWE954PU0w=w526-h296-rw", "https://play-lh.googleusercontent.com/nvW4_TbXpA7sNAFCpH-__5Rph0Ti6pVUB3PFvrEdcewhrbf5SYNcdjga7AWE954PU0w=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/QzfsM-umlynRaibL_XpuGfL4FC7w7T7kWJLzqfrlR1ta-859dGXZDKHbeTL4w3OzsdA=w526-h296-rw", "https://play-lh.googleusercontent.com/QzfsM-umlynRaibL_XpuGfL4FC7w7T7kWJLzqfrlR1ta-859dGXZDKHbeTL4w3OzsdA=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/DM6lsengG8MdYC47fmY_WobYOjKiFfIttbpHv2eziqBtWf6hoLQTBI_aserYUgRUzKo=w526-h296-rw", "https://play-lh.googleusercontent.com/DM6lsengG8MdYC47fmY_WobYOjKiFfIttbpHv2eziqBtWf6hoLQTBI_aserYUgRUzKo=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/WIFs_peRQJD8uElRKYAgbfoDh37yE7HKvgMhJbmQhG7eeMwuPe7iJoId0EJCIT-ymPY=w526-h296-rw", "https://play-lh.googleusercontent.com/WIFs_peRQJD8uElRKYAgbfoDh37yE7HKvgMhJbmQhG7eeMwuPe7iJoId0EJCIT-ymPY=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/BZIHReZOWeZF7nkp0l6DLVTntgHc1Rvqwj3Ih2G9gbpy8ZLDMxnigbZ2QxTZnx1PyXA=w526-h296-rw", "https://play-lh.googleusercontent.com/BZIHReZOWeZF7nkp0l6DLVTntgHc1Rvqwj3Ih2G9gbpy8ZLDMxnigbZ2QxTZnx1PyXA=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/gyut_JZu2erATfCmRSpODy4E9DkKNp3p9AqovYshbOtJ5NfqA-VK1IMPAas9rlKx024=w526-h296-rw", "https://play-lh.googleusercontent.com/gyut_JZu2erATfCmRSpODy4E9DkKNp3p9AqovYshbOtJ5NfqA-VK1IMPAas9rlKx024=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/hTSl8uIlc_7DBuibZd8yoQLW9zB8LBV0DePDkLoPz5VTi8zgehB0x9TrXVXUrOQPGDQ=w526-h296-rw", "https://play-lh.googleusercontent.com/hTSl8uIlc_7DBuibZd8yoQLW9zB8LBV0DePDkLoPz5VTi8zgehB0x9TrXVXUrOQPGDQ=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/fsiGHld7ab21TV75iGh7NsT1B5VQWdbVl2nTL8hrKXvFZtCt4ugBv1cV3wR0XCIvUyM=w526-h296-rw", "https://play-lh.googleusercontent.com/fsiGHld7ab21TV75iGh7NsT1B5VQWdbVl2nTL8hrKXvFZtCt4ugBv1cV3wR0XCIvUyM=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/vO0eckL9S8KWd-fCrUV0jsWvhYnvWIzuN4QnseUZ3bXEluJz2UVjmB4xIphlcYpopbo=w526-h296-rw", "https://play-lh.googleusercontent.com/vO0eckL9S8KWd-fCrUV0jsWvhYnvWIzuN4QnseUZ3bXEluJz2UVjmB4xIphlcYpopbo=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/U0OWCGB5WJFJkNK1NjU1oQekxZpnmqRvfH7DoCtH9csjFDQwaetqIuZgDX7sRUrORr0=w526-h296-rw", "https://play-lh.googleusercontent.com/U0OWCGB5WJFJkNK1NjU1oQekxZpnmqRvfH7DoCtH9csjFDQwaetqIuZgDX7sRUrORr0=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/An1q-C5BHGU7hIdLtNkh3e24X6qpKoVHgIX-doKVjZfy-9DgYrmll7Llnl41uROChX8=w526-h296-rw", "https://play-lh.googleusercontent.com/An1q-C5BHGU7hIdLtNkh3e24X6qpKoVHgIX-doKVjZfy-9DgYrmll7Llnl41uROChX8=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/2kZ6CMClF7UxuTPfgqrS7_ocwM9aaYfUWmf6lHd8rw5lzH9-oFOBrQIztUtrqctW5wI=w526-h296-rw", "https://play-lh.googleusercontent.com/2kZ6CMClF7UxuTPfgqrS7_ocwM9aaYfUWmf6lHd8rw5lzH9-oFOBrQIztUtrqctW5wI=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/NsUNzy2k7r8J6X55OtZqPcjoaMUeNtE4PJ2ePbvZ7-JA950iRQhvHNRlVyN35T0JOA=w526-h296-rw", "https://play-lh.googleusercontent.com/NsUNzy2k7r8J6X55OtZqPcjoaMUeNtE4PJ2ePbvZ7-JA950iRQhvHNRlVyN35T0JOA=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/Ds_RKV36dDWsY9GlkmuX0N5FStrnl03NlzvVgLRTeFN-cDSNs-8ir6z3uvkIqMYcvhE=w526-h296-rw", "https://play-lh.googleusercontent.com/Ds_RKV36dDWsY9GlkmuX0N5FStrnl03NlzvVgLRTeFN-cDSNs-8ir6z3uvkIqMYcvhE=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/3moHtWuy5xtCCXL6DAVz0o6mLuIECoTNHEaqHTm27aRuNKccO4GhzX90pTU4lcTSjQ=w526-h296-rw", "https://play-lh.googleusercontent.com/3moHtWuy5xtCCXL6DAVz0o6mLuIECoTNHEaqHTm27aRuNKccO4GhzX90pTU4lcTSjQ=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/Xve9CkKHEG1AIbMi5WDU7d4r5TqbH5Hx6OixomesaEH3FbVEfr30SEDZAxeEnEdomZw=w526-h296-rw", "https://play-lh.googleusercontent.com/Xve9CkKHEG1AIbMi5WDU7d4r5TqbH5Hx6OixomesaEH3FbVEfr30SEDZAxeEnEdomZw=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/TKujUMC7-lDrQ8nrlL-3CVneeV87Z0urvfSFAmJwXu3MXGCpGEjbJFSdwOWqbYqDqN0=w526-h296-rw", "https://play-lh.googleusercontent.com/TKujUMC7-lDrQ8nrlL-3CVneeV87Z0urvfSFAmJwXu3MXGCpGEjbJFSdwOWqbYqDqN0=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/iEo9gqZxhGMoPL7iNeVlnEPz9fao2PUBJ5G0F-nbz2L7T76T6DDqr9WT8UiKqWjg-w=w526-h296-rw", "https://play-lh.googleusercontent.com/iEo9gqZxhGMoPL7iNeVlnEPz9fao2PUBJ5G0F-nbz2L7T76T6DDqr9WT8UiKqWjg-w=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/KLq0zOjr93SG56N-OSbw-I7CdC_skpt2vn86E7M-80uFuSoOkBqsBiZc-ByQhY0Z9-U=w526-h296-rw", "https://play-lh.googleusercontent.com/KLq0zOjr93SG56N-OSbw-I7CdC_skpt2vn86E7M-80uFuSoOkBqsBiZc-ByQhY0Z9-U=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/uEJDFX_qlsddw94RcMhpHYpp6OXhZHkCFzB1UT8EaTEWnNZZIeqYvt8zZZTMIaD5alu0=w526-h296-rw", "https://play-lh.googleusercontent.com/uEJDFX_qlsddw94RcMhpHYpp6OXhZHkCFzB1UT8EaTEWnNZZIeqYvt8zZZTMIaD5alu0=w1052-h592-rw 2x"],
-                           ["https://play-lh.googleusercontent.com/k7Aeik7rSNK61lFlB53QIJKlpkj3Czm-EpH_mqP-4efpSLcnMIXprdWCXyWcSQj93XA=w526-h296-rw", "https://play-lh.googleusercontent.com/k7Aeik7rSNK61lFlB53QIJKlpkj3Czm-EpH_mqP-4efpSLcnMIXprdWCXyWcSQj93XA=w1052-h592-rw 2x"]]'>
+            <!-- Component carousel ảnh chụp màn hình, nhận dữ liệu qua attribute data-images -->
+            <screenshot-carousel id="my-app-carousel" data-images='[ ... ]'>
             </screenshot-carousel>
+
+            <!-- Section nội dung chi tiết về app -->
             <app-content-section title="Tính năng mới"
               content="We hope you’re having fun playing Real Flight Simulator! We update the game every week so don't forget to download the latest version to get all the sweet new features and levels!<br><br>New to the game? Don’t be shy, join the fun!<br><br>Coming back after a break? About time!<br><br>Let’s play!">
+
+              <!-- Section an toàn dữ liệu -->
               <app-content-section type="safety" title="An toàn dữ liệu" package-id="it.rortos.realflightsimulator"
                 content="Sự an toàn bắt đầu từ việc nắm được cách nhà phát triển thu thập và chia sẻ dữ liệu của bạn. Các biện pháp bảo vệ quyền riêng tư và bảo mật dữ liệu có thể thay đổi tuỳ theo cách sử dụng, khu vực và độ tuổi. Nhà phát triển đã cung cấp thông tin này và có thể sẽ cập nhật theo thời gian."
                 safety-share="Vị trí, Thông tin cá nhân và Mã nhận dạng thiết bị hoặc mã nhận dạng khác"
                 safety-collect="Vị trí, Thông tin cá nhân và 5 loại dữ liệu khác">
               </app-content-section>
+
+              <!-- Component hiển thị rating dạng sao -->
               <star-content-section></star-content-section>
+
+              <!-- Component hiển thị đánh giá người dùng -->
               <app-reviews-section></app-reviews-section>
+
+              <!-- Component mô tả chi tiết trò chơi -->
               <game-description></game-description>
+            </app-content-section>
 
           </div>
+
+          <!-- Sidebar chi tiết trò chơi -->
           <div class="details-sidebar">
             <game-sidebar></game-sidebar>
           </div>
@@ -104,9 +97,17 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer trang -->
   <custom-footer></custom-footer>
-    <script src="/assets/js/headerShadow.js"></script>
-    <script src="/assets/js/carousel-scroll.js"></script>
+
+  <!-- Các file JS -->
+  <script src="/assets/js/headerShadow.js"></script>
+  <script src="/assets/js/carousel-scroll.js"></script>
+  <script src="/assets/js/searchBar.js"></script>
+  <script src="/assets/js/theme-manager.js"></script>
+  <script src="/assets/js/SettingTab.js"></script>
+  <script src="/assets/js/download.js"></script>
 </body>
 
 </html>
