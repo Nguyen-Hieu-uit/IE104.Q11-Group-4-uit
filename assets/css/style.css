@@ -4,6 +4,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Định nghĩa font Arial Regular cho toàn bộ trang web */
 @font-face {
   font-family: "ArialRegular";
   src: url("/assets/Fonts/Arial_Regular/Arial-Regular.ttf") format("woff2");
@@ -12,10 +13,12 @@
   font-display: swap;
 }
 
+/* Reset màu cho link đã truy cập */
 a:visited {
   color: initial;
 }
 
+/* Màu mặc định cho tất cả link */
 a,
 a:visited {
   color: #333;
@@ -180,10 +183,12 @@ section {
   z-index: 1;
 }
 
+/* Header với hiệu ứng shadow khi cuộn trang */
 #header {
   transition: box-shadow 0.2s ease;
   box-shadow: none;
 }
+/* Thêm shadow cho header khi đã cuộn xuống */
 #header.scrolled {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -205,6 +210,7 @@ section {
   }
 }
 
+/* Container nội dung bên trong main-content (định vị và chiều cao) */
 .main-content-inner {
   min-height: 100%;
   position: relative;
@@ -244,10 +250,12 @@ section {
   }
 }
 
+/* Wrapper cho phần nội dung (định vị tương đối) */
 .content-wrapper {
   position: relative;
 }
 
+/* Khoảng cách giữa các phần tử (gap) */
 .element-gap {
   gap: 12px;
 }
@@ -268,11 +276,13 @@ section {
   display: none; /* Ẩn hoàn toàn */
 }
 
+/* Item trong danh sách platform (không co lại, snap khi scroll) */
 .platform-item {
   flex-shrink: 0;
   scroll-snap-align: start;
 }
 
+/* Khoảng cách cell trong grid spotlight (padding và margin negative) */
 .spotlight-grid__cell-spacing {
   padding-left: calc(var(--gap-width) / 2);
   margin-right: calc(var(--gap-width) / 2 * -1);
@@ -286,6 +296,7 @@ section {
   position: relative;
 }
 
+/* Biến thể card dạng phẳng (có border, không shadow) */
 .card--flat {
   border-radius: 8px;
   background-color: #fff;
@@ -375,11 +386,13 @@ section {
   }
 }
 
+/* Wrapper nội dung trong banner spotlight (điều chỉnh margin/padding theo gap) */
 .spotlight-banner__content-wrapper {
   margin: calc(var(--gap-width) / 2 * -1);
   padding: calc(var(--gap-width) / 2);
 }
 
+/* Badge hiển thị trên góc card spotlight (ví dụ: "NEW", "POPULAR") */
 .spotlight-card__badge {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 8px 0;
@@ -389,6 +402,7 @@ section {
   z-index: 1;
 }
 
+/* Text trong badge của spotlight card */
 .spotlight-card__badge-text {
   font-size: 0.875rem;
   font-weight: 400;
@@ -414,6 +428,7 @@ section {
   border-radius: 8px;
 }
 
+/* Hình ảnh trong spotlight card (tỉ lệ 16:9, bo góc trên) */
 .spotlight-card__image {
   aspect-ratio: 1.7777777778;
   border-radius: 8px 8px 0 0;
@@ -422,6 +437,7 @@ section {
   width: 100%;
 }
 
+/* Footer của spotlight card (chứa thông tin app, nút action) */
 .spotlight-card__footer {
   border-radius: 0 0 8px 8px;
   display: block;
@@ -446,6 +462,7 @@ section {
   }
 }
 
+/* Overlay trên hình ảnh spotlight card (gradient, text overlay) */
 .spotlight-card__image-overlay {
   aspect-ratio: 1.7777777778;
   position: absolute;
@@ -454,6 +471,7 @@ section {
   width: 100%;
 }
 
+/* Overlay nội dung trên hình ảnh spotlight (title, subtitle) */
 .spotlight-card__content-overlay {
   bottom: 60px;
   padding: 0 16px;
@@ -480,6 +498,7 @@ section {
   }
 }
 
+/* Phụ đề của spotlight card (mô tả ngắn, truncate nếu quá dài) */
 .spotlight-card__subtitle {
   font-size: 0.875rem;
   font-weight: 400;
@@ -499,11 +518,13 @@ section {
   }
 }
 
+/* Utility class: đổi màu text sang đen */
 .text-color-black,
 .text-color-black:not(:disabled) {
   color: rgb(32, 33, 36);
 }
 
+/* Tiêu đề của spotlight card (hiển thị tên app, giới hạn 2 dòng) */
 .spotlight-card__title {
   line-height: 1.5rem;
   font-size: 1.125rem;
@@ -527,6 +548,7 @@ section {
   }
 }
 
+/* Grid layout cho footer spotlight card (icon app + button) */
 .spotlight-card__footer-grid {
   align-items: center;
   bottom: 0;
@@ -555,6 +577,7 @@ section {
   }
 }
 
+/* Nhóm thông tin app trong spotlight footer (icon + tên/category) */
 .spotlight-card__app-info-group {
   align-items: center;
   column-gap: 16px;
@@ -563,6 +586,7 @@ section {
   margin-right: 16px;
 }
 
+/* Icon app trong spotlight card (có shadow, bo góc) */
 .spotlight-card__app-icon {
   border-radius: 12px;
   border-width: 0;
@@ -579,6 +603,7 @@ section {
   }
 }
 
+/* Chi tiết app trong spotlight (tên, category) - layout dạng grid */
 .spotlight-card__app-details {
   display: grid;
   grid-template-rows: max-content;
@@ -586,6 +611,7 @@ section {
   row-gap: 2px;
 }
 
+/* Dòng chi tiết trong spotlight (truncate text nếu quá dài) */
 .spotlight-card__detail-line {
   align-items: center;
   display: inline-flex;
@@ -594,6 +620,7 @@ section {
   white-space: nowrap;
 }
 
+/* Tên app trong spotlight card (truncate nếu quá dài) */
 .spotlight-card__app-name {
   font-size: 0.875rem;
   font-weight: 400;
@@ -612,6 +639,7 @@ section {
   }
 }
 
+/* Thể loại app trong spotlight card */
 .spotlight-card__app-category {
   line-height: 1rem;
   font-size: 0.75rem;
@@ -630,10 +658,12 @@ section {
   }
 }
 
+/* Khoảng cách trong phần rating của spotlight card */
 .spotlight-card__rating-spacer {
   padding: 0 8px;
 }
 
+/* Icon sao rating trong spotlight card */
 .spotlight-card__rating-star-icon {
   height: 12px;
   width: 12px;
@@ -646,6 +676,7 @@ section {
   }
 }
 
+/* Utility class: flex column, căn giữa các item */
 .util-flex-center-column {
   align-items: center;
   display: flex;
@@ -658,6 +689,7 @@ section {
   cursor: pointer;
 }
 
+/* Button dạng filled/contained (có background màu) */
 .button--contained {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -669,6 +701,7 @@ section {
   border-radius: 4px;
 }
 
+/* Button nhỏ dùng trong spotlight card */
 .spotlight-button--small:not(:disabled) {
   height: 28px;
   margin: 0;
@@ -684,19 +717,23 @@ section {
   }
 }
 
+/* Nội dung bên trong card (kế thừa border-radius) */
 .card__content {
   border-radius: inherit;
   height: 100%;
 }
 
+/* Item được chọn trong danh sách filter (màu nền xanh nhạt) */
 .item-selected.is-active:not(:disabled) {
   background-color: #e6f3ef;
 }
 
+/* Màu text cho item được chọn */
 .item-selected.is-active:not(:disabled) {
   color: #056449;
 }
 
+/* Trạng thái active của item được chọn (đầy đủ thuộc tính) */
 .item-selected.is-active {
   color: #056449;
   fill: #056449;
@@ -704,10 +741,12 @@ section {
   background-color: #e6f3ef;
 }
 
+/* Utility class: bo góc tròn hoàn toàn (hình tròn) */
 .rounded-full {
   border-radius: 9999px;
 }
 
+/* Button cho platform filter (Android, iOS, Web...) */
 .platform-button {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -738,14 +777,17 @@ section {
   z-index: 0;
 }
 
+/* Hiệu ứng hover cho platform button */
 .platform-button:hover {
   background-color: #f5f5f5;
 }
 
+/* Màu ripple effect cho platform button */
 .platform-button .ripple-effect {
   background-color: rgb(95, 99, 104);
 }
 
+/* Hiệu ứng ripple (sóng nước) khi click button */
 .ripple-effect {
   bottom: 0;
   left: 0;
@@ -755,6 +797,7 @@ section {
   top: 0;
 }
 
+/* Container nội dung bên trong button (label + icon) */
 .button-content {
   align-items: center;
   display: flex;
@@ -763,17 +806,20 @@ section {
   height: 100%;
 }
 
+/* Prefix icon/icon trước text trong button */
 .button-prefix {
   display: inline-flex;
   flex-shrink: 0;
   margin: 0 4px 0 0;
 }
 
+/* Label/text trong button */
 .button-content .button-label {
   display: inline-block;
   margin: 6px 4px;
 }
 
+/* Icon trong button dạng rounded-full */
 .rounded-full .button-icon {
   width: 16px;
   height: 16px;
@@ -784,11 +830,13 @@ section {
   padding-top: 40px;
 }
 
+/* Section chứa danh sách app (khoảng cách dưới) */
 .app-section {
   display: block;
   margin-bottom: 30px;
 }
 
+/* Khoảng cách header của section (padding dưới) */
 .section-header-spacing {
   padding-bottom: 20px;
 }
@@ -820,6 +868,7 @@ section {
   }
 }
 
+/* Tiêu đề của section banner (ví dụ: "Top Games", "New Releases") */
 .section-banner-title {
   color: rgb(32, 33, 36);
   fill: rgb(32, 33, 36);
@@ -845,6 +894,7 @@ section {
   }
 }
 
+/* Mô tả ngắn của section banner */
 .section-banner-description {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -868,6 +918,7 @@ section {
   }
 }
 
+/* Container cho danh sách app (biến CSS cho gap) */
 .app-list-container {
   --gap-width: 12px;
 }
@@ -884,6 +935,7 @@ section {
   }
 }
 
+/* Wrapper cho danh sách app (cho phép overflow) */
 .app-list-wrapper {
   overflow: visible;
 }
@@ -923,10 +975,12 @@ section {
   }
 }
 
+/* Link phủ toàn bộ card (không có gạch chân) */
 .card-link.card-content {
   text-decoration: none;
 }
 
+/* Link tuyệt đối phủ toàn bộ card (click vào đâu cũng mở link) */
 .card-link {
   position: absolute;
   left: 0;
@@ -936,6 +990,7 @@ section {
   outline: none;
 }
 
+/* Utility class: định vị tương đối */
 .pos-relative {
   position: relative;
 }
@@ -970,11 +1025,13 @@ section {
   }
 }
 
+/* Khoảng cách row app (padding trái, margin phải negative) */
 .app-row-spacing {
   padding-left: calc(var(--gap-width) / 2);
   margin-right: calc(var(--gap-width) / 2 * -1);
 }
 
+/* Nội dung card (flex column layout) */
 .card__content {
   display: flex;
   flex-direction: column;
@@ -982,6 +1039,7 @@ section {
   position: relative;
 }
 
+/* Card responsive (chiều rộng thay đổi theo viewport) */
 .card--responsive {
   --gap-width: 12px;
   --card-width: calc(100vw - 48px);
@@ -1021,6 +1079,7 @@ section {
   }
 }
 
+/* Container card (có thể click, hiệu ứng hover) */
 .card-container {
   display: flex;
   flex-direction: column;
@@ -1055,6 +1114,7 @@ section {
   display: flex;
 }
 
+/* Phần bên trong card (điều chỉnh margin/padding theo gap) */
 .card-inner {
   border-radius: 8px;
   margin: calc(var(--gap-width) / 2 * -1);
@@ -1071,6 +1131,7 @@ section {
   border-bottom-right-radius: inherit;
 }
 
+/* Nội dung card (layout flex column, định vị tương đối) */
 .card-content {
   position: relative;
   display: flex;
@@ -1086,6 +1147,7 @@ section {
   width: var(--media-width);
 }
 
+/* Container thumbnail app (tỉ lệ 16:9, responsive) */
 .app-thumbnail {
   --media-width: calc(100vw - 48px);
   border-radius: 8px;
@@ -1139,10 +1201,12 @@ section {
   }
 }
 
+/* Utility class: ảnh nền fit contain (không cắt) */
 .img-contain {
   background-size: contain;
 }
 
+/* Grid thông tin app (icon + chi tiết) */
 .app-info {
   column-gap: 16px;
   display: grid;
@@ -1150,6 +1214,7 @@ section {
   margin: 16px 0;
 }
 
+/* Icon app trong danh sách (có shadow, bo góc) */
 .app-icon {
   border-radius: 12px;
   border-width: 0;
@@ -1166,6 +1231,7 @@ section {
   }
 }
 
+/* Chi tiết app (tên, category, rating) - layout grid */
 .app-details {
   display: grid;
   grid-template-rows: max-content;
@@ -1179,6 +1245,7 @@ section {
   }
 }
 
+/* Text thông tin app (màu xám, font nhỏ) */
 .app-info__text {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -1188,11 +1255,13 @@ section {
   line-height: 1.25rem;
 }
 
+/* Dòng chi tiết app */
 .app-detail-row {
   line-height: 1.25rem;
   font-size: 0.875rem;
 }
 
+/* Tên app hoặc tên producer (truncate nếu quá dài) */
 .app-name,
 .producer-app-name {
   width: 100%;
@@ -1205,6 +1274,7 @@ section {
   display: inline-block;
 }
 
+/* Tên app (màu đen, font nhỏ, truncate) */
 .app-name {
   color: rgb(32, 33, 36);
   fill: rgb(32, 33, 36);
@@ -1230,6 +1300,7 @@ section {
   color: rgb(32, 33, 36);
 }
 
+/* Dòng chi tiết app (inline-flex, truncate) */
 .app-detail-row {
   align-items: center;
   display: inline-flex;
@@ -1238,6 +1309,7 @@ section {
   white-space: nowrap;
 }
 
+/* Separator rating và category app */
 .app-rating-separator,
 .app-category {
   line-height: 1rem;
@@ -1272,16 +1344,19 @@ section {
   color: rgb(95, 99, 104);
 }
 
+/* Separator giữa rating và category (dấu chấm) */
 .app-rating-separator {
   padding: 0 8px;
 }
 
+/* Container rating (sao + số) */
 .app-rating {
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
+/* Rating và icon rating (inline-flex, căn giữa) */
 .app-rating,
 .app-rating-icon {
   align-items: center;
@@ -1289,10 +1364,12 @@ section {
   height: 100%;
 }
 
+/* Icon rating (hiển thị inline-block) */
 .app-rating-icon {
   display: inline-block;
 }
 
+/* Số lượng đánh giá (margin trái) */
 .app-rating-count {
   display: inline-block;
   margin-left: 8px;
@@ -1340,6 +1417,7 @@ section {
   }
 }
 
+/* Đường phân cách trong footer (border dưới) */
 .footer__divider {
   border-color: rgb(232, 234, 237);
   border-bottom: 1px solid;
@@ -1352,6 +1430,7 @@ section {
   border-color: rgb(232, 234, 237);
 }
 
+/* Grid layout cho các section trong footer */
 .footer__sections {
   display: grid;
   grid-template-columns: 1fr;
@@ -1399,6 +1478,7 @@ section {
   color: rgb(95, 99, 104);
 }
 
+/* Link trong footer (block display, width max-content) */
 .footer__link {
   display: block;
   width: max-content;
@@ -1409,12 +1489,14 @@ section {
   color: #01875f;
 }
 
+/* Container các link ở dưới footer (flex, wrap) */
 .footer__bottom-links {
   margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
 }
 
+/* Item trong footer bottom (link, copyright, locale...) */
 .footer__bottom-item {
   font-size: 0.75rem;
   line-height: 48px;
@@ -1434,6 +1516,7 @@ section {
   }
 }
 
+/* Switcher chọn ngôn ngữ trong footer (grid 2 cột) */
 .footer__locale-switcher {
   display: grid;
   grid-template-columns: repeat(2, max-content);
@@ -1441,6 +1524,7 @@ section {
   column-gap: 12px;
 }
 
+/* Reset gạch chân cho tất cả link */
 a {
   text-decoration: none;
 }
@@ -1457,6 +1541,7 @@ a {
 }
 
 /* Phần header tổng quan của trang chi tiết app (vùng hero phía trên) */
+/* Nội dung bên trong header summary của trang chi tiết app */
 .app-header-summary__inner {
   color: rgb(32, 33, 36);
   fill: rgb(32, 33, 36);
@@ -1488,6 +1573,7 @@ body:not(.app-header-summary)
   background-color: #202124;
 }
 
+/* Khoảng cách trên cho nội dung trang chi tiết app */
 .main-app-content-spacing {
   margin-top: 104px;
 }
@@ -1498,6 +1584,7 @@ body:not(.app-header-summary)
   }
 }
 
+/* Container nội dung header trang chi tiết app */
 .app-header-content {
   margin: 0 auto;
   min-height: 56px;
@@ -1505,6 +1592,7 @@ body:not(.app-header-summary)
   width: calc(100% - 48px);
 }
 
+/* Max-width cho header content */
 .app-header-content-mwdth {
   max-width: 1296px;
 }
@@ -1521,12 +1609,14 @@ body:not(.app-header-summary)
   }
 }
 
+/* Container video trailer trong header app detail (tỉ lệ 16:9) */
 .trailer-container,
 .trailer-container__video {
   height: 56.25vw;
   width: 100vw;
 }
 
+/* Vị trí tuyệt đối của trailer container */
 .trailer-container {
   position: absolute;
   right: -24px;
@@ -1564,6 +1654,7 @@ body:not(.app-header-summary)
   }
 }
 
+/* Overlay gradient trên video trailer (tối dần từ dưới lên) */
 .trailer-container__overlay {
   background: linear-gradient(to top, rgb(32, 33, 36) 0, rgba(0, 0, 0, 0) 56%);
   bottom: 0;
@@ -1605,6 +1696,7 @@ body:not(.app-header-summary)
 }
 
 @media screen and (min-width: 840px) {
+  /* Section thông tin nhận diện app (icon, tên, developer...) */
   .app-identity-info-section {
     min-height: 56.25vw;
   }
@@ -1638,6 +1730,7 @@ body:not(.app-header-summary)
   }
 }
 
+/* Nhóm tiêu đề app (icon + title wrapper) */
 .app-identity__title-group {
   align-items: flex-start;
   display: flex;
@@ -1647,6 +1740,7 @@ img {
   border: none;
 }
 
+/* Icon app lớn trong trang chi tiết (có shadow) */
 .app-identity__icon {
   border-width: 0;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
@@ -1656,6 +1750,7 @@ img {
   width: 72px;
 }
 
+/* Icon app bo góc 20% (dạng tròn hơn) */
 .app-identity-img-rounded {
   border-radius: 20%;
 }
@@ -1665,6 +1760,7 @@ img {
     width: 96px;
   }
 }
+/* Container các button action (install, share...) */
 .btn-container {
   z-index: 1;
   align-items: center;
@@ -1695,6 +1791,7 @@ img {
   }
 }
 
+/* Wrapper tiêu đề app (responsive font size, flex layout) */
 .app-identity__title-wrapper {
   line-height: 2rem;
   font-size: 1.5rem;
@@ -1709,6 +1806,7 @@ img {
 }
 
 @media screen and (min-width: 600px) {
+  /* Tiêu đề cỡ trung bình (responsive từ 600px) */
   .title-md {
     line-height: 3.25rem;
     font-size: 2.75rem;
@@ -1725,6 +1823,7 @@ img {
 }
 
 @media screen and (min-width: 1280px) {
+  /* Tiêu đề cỡ lớn (responsive từ 1280px) */
   .title-lg {
     line-height: 4.75rem;
     font-size: 4rem;
@@ -1744,10 +1843,12 @@ img {
   }
 }
 
+/* Tiêu đề app (tên chính) */
 .app-identity__title {
   unicode-bidi: plaintext;
 }
 
+/* Meta information của app (developer, tags) */
 .app-identity__meta {
   margin-top: 2px;
 }
@@ -1758,6 +1859,7 @@ img {
   }
 }
 
+/* Developer của app */
 .app-identity__developer {
   line-height: 1.5rem;
   font-size: 1rem;
@@ -1765,6 +1867,7 @@ img {
   font-weight: 500;
 }
 
+/* Text developer (màu vàng/nâu) */
 .app-identity__developer-text {
   color: #cc8a45;
   fill: #cc8a45;
@@ -1785,6 +1888,7 @@ img {
   color: #ce965c;
 }
 
+/* Tags của app (thể loại, features...) */
 .app-identity__tags {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -1810,6 +1914,7 @@ img {
 }
 
 /* Thanh thống kê nhanh của app (rating, lượt tải, độ tuổi...) */
+/* Thanh thống kê app (rating, downloads, age rating) */
 .app-identity__stats-bar {
   height: 64px;
   margin: 16px 0 24px 0;
@@ -1824,6 +1929,7 @@ img {
   }
 }
 
+/* Nội dung stats bar (scroll ngang nếu quá dài) */
 .app-identity-stats-bar__content {
   align-items: center;
   display: flex;
@@ -1831,6 +1937,7 @@ img {
   width: 100%;
 }
 
+/* Icon app trong stats bar (có thể ẩn trên desktop) */
 .app-identity__stats-bar__icon {
   border-width: 0;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
@@ -1851,11 +1958,13 @@ img {
   }
 }
 
+/* Container các item trong stats bar */
 .app-identity__stats-bar__items {
   align-items: center;
   display: flex;
 }
 
+/* Một item trong stats bar (rating, downloads...) */
 .app__stats-bar__item {
   min-width: 96px;
   padding: 0 16px;
@@ -1866,6 +1975,7 @@ img {
   padding-left: 0;
 }
 
+/* Giá trị trong stat item (số rating, số downloads...) */
 .app__stats-bar__item .stat-item__value {
   color: rgb(32, 33, 36);
   fill: rgb(32, 33, 36);
@@ -1895,11 +2005,13 @@ img {
   color: rgb(232, 234, 237);
 }
 
+/* Hiển thị sao rating (flex, căn giữa) */
 .rating-display__star {
   align-items: center;
   display: flex;
 }
 
+/* Label trong stat item (ví dụ: "Ratings", "Downloads") */
 .app__stats-bar__item .stat-item__label {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -1929,26 +2041,31 @@ img {
   color: rgb(154, 160, 166);
 }
 
+/* Trigger hiển thị tooltip (cursor pointer) */
 .tooltip-trigger {
   cursor: pointer;
   line-height: 12px;
   margin-left: 4px;
 }
 
+/* Icon giới hạn độ tuổi (PEGI, ESRB...) */
 .age-limit-icon {
   height: 16px;
   min-width: 16px;
 }
 
+/* Icon nhỏ (12x12px) */
 .small-icon:nth-child(n) {
   width: 12px;
   height: 12px;
 }
 
+/* Separator giữa các tag (dấu chấm) */
 .app-identity__tag:not(:first-child)::before {
   content: " · ";
 }
 
+/* Đường phân cách giữa các stat item (border trái) */
 .app__stats-bar__item:not(:first-child)::before {
   background-color: rgb(232, 234, 237);
   content: "";
@@ -1960,10 +2077,12 @@ img {
   width: 1px;
 }
 
+/* Màu separator trong header summary (nền tối) */
 .app-header-summary .app__stats-bar__item:not(:first-child)::before {
   background-color: rgb(60, 64, 67);
 }
 
+/* Container các action button (install, share, wishlist...) */
 .app-actions {
   align-items: unset;
   display: flex;
@@ -1977,19 +2096,23 @@ img {
   }
 }
 
+/* Button text màu xanh/vàng */
 .button-wrapper .button--text-green:not(:disabled) {
   color: #cc8a45;
 }
 
+/* Button text màu xanh/vàng trên header summary */
 .app-header-summary .button-wrapper .button--text-green:not(:disabled) {
   color: #ce965c;
 }
 
+/* Wrapper cho install button */
 .app-actions__install-wrapper {
   align-items: center;
   display: flex;
 }
 
+/* Container install button (grow full width trên mobile) */
 .app-actions .install-button-wrapper {
   flex-grow: 1;
 }
@@ -2000,15 +2123,18 @@ img {
   }
 }
 
+/* Wrapper component install (flex column) */
 .install-component-wrapper {
   display: flex;
   flex-direction: column;
 }
 
+/* Utility: flex container */
 .flex-container {
   display: flex;
 }
 
+/* Utility: layout từ column sang row (responsive) */
 .layout-col-to-row {
   flex-direction: column;
 }
@@ -2019,6 +2145,7 @@ img {
   }
 }
 
+/* Wrapper touch cho button (mobile) */
 .button__touch-wrapper {
   display: inline;
 }
@@ -2055,6 +2182,7 @@ img {
   padding: 0 8px 0 8px;
 }
 
+/* Button theme màu xanh (primary action) */
 .button--theme-green {
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0 16px 0 16px;
@@ -2078,6 +2206,7 @@ img {
   border-radius: 4px;
 }
 
+/* Button với typography chuẩn (không uppercase) */
 .button--typography {
   font-size: 0.875rem;
   letter-spacing: 0.0107142857em;
@@ -2088,15 +2217,18 @@ img {
   box-shadow: none;
 }
 
+/* Button với padding ngang lớn */
 .button--padding-x-large {
   padding: 0 24px 0 24px;
 }
 
+/* Button bo góc tròn (8px) */
 .button--shape-rounded {
   padding: 0 16px 0 16px;
   border-radius: 8px;
 }
 
+/* Button responsive sizing (thay đổi kích thước theo breakpoint) */
 .button--sizing-responsive {
   line-height: 1.25rem;
   font-size: 0.875rem;
@@ -2123,6 +2255,7 @@ img {
   }
 }
 
+/* Utility: width từ full sang auto (responsive) */
 .width-full-to-auto {
   width: 100%;
 }
@@ -2204,6 +2337,7 @@ img {
   color: rgb(154, 160, 166);
 }
 
+/* Icon trong device info line */
 .device-info__line .device-info__icon {
   flex-shrink: 0;
   font-size: 20px;
@@ -2212,10 +2346,12 @@ img {
   width: 20px;
 }
 
+/* Utility: gạch chân cho link */
 .link_underline {
   text-decoration: underline;
 }
 
+/* Sao rating hiển thị (kích thước nhỏ) */
 .rating-display__star:nth-child(n) {
   width: 12px;
   height: 12px;
@@ -2233,12 +2369,14 @@ img {
   }
 }
 
+/* Carousel desktop và screenshot (chiều cao 100%) */
 .carousel--desktop,
 .carousel--screenshot,
 .carousel__item-content {
   height: 100%;
 }
 
+/* Khoảng cách giữa các item trong carousel */
 .carousel--items-spacing {
   margin-right: 12px;
 }
@@ -2249,6 +2387,7 @@ img {
   }
 }
 
+/* Hình ảnh trong carousel (có shadow, click được) */
 .carousel__image {
   border-width: 0;
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
@@ -2277,6 +2416,7 @@ img {
 }
 
 @media screen and (min-width: 960px) {
+  /* Feed nội dung chính (trừ sidebar) */
   .content-feed {
     width: calc(100% - 348px);
   }
@@ -2308,6 +2448,7 @@ img {
   }
 }
 
+/* Header của content section (padding dưới) */
 .content-section__header {
   padding-bottom: 20px;
 }
@@ -2318,6 +2459,7 @@ img {
   }
 }
 
+/* Nội dung header section (title + action buttons) */
 .section-header-inner {
   color: rgb(32, 33, 36);
   fill: rgb(32, 33, 36);
@@ -2351,15 +2493,18 @@ img {
   color: rgb(32, 33, 36);
 }
 
+/* Wrapper tiêu đề content section */
 .content-section__title-wrapper {
   margin-right: 16px;
 }
 
+/* Tiêu đề content section (flex, căn giữa) */
 .content-section__title {
   display: flex;
   align-items: center;
 }
 
+/* Nội dung body của content section (màu xám, font nhỏ) */
 .content-section__body {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -2374,6 +2519,7 @@ img {
   color: rgb(95, 99, 104);
 }
 
+/* Icon button với margin âm (pull margin) */
 .icon-button--pull-margin {
   margin: -12px;
 }
@@ -2429,6 +2575,7 @@ img {
   transition: opacity 0.15s linear;
 }
 
+/* Mũi tên trong header section (expand/collapse) */
 .section-header-inner .content-section__header-arrow {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -2438,6 +2585,7 @@ img {
   padding: 2px;
 }
 
+/* Link phủ toàn bộ phần tử (stretched) */
 .stretched-link {
   height: 100%;
   left: 0;
@@ -2460,17 +2608,20 @@ img {
   border-color: rgb(218, 220, 224);
 }
 
+/* Item media (icon + text body) */
 .media-item {
   align-items: flex-start;
   display: flex;
 }
 
+/* Icon trong media item */
 .media-item__icon {
   height: 20px;
   margin-right: 20px;
   width: 20px;
 }
 
+/* Nội dung text trong media item */
 .media-item__body {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
@@ -2485,6 +2636,7 @@ img {
   color: rgb(95, 99, 104);
 }
 
+/* Biến thể button secondary (nút chữ, không nền, dùng cho action phụ) */
 .button--secondary {
   font-size: 0.875rem;
   letter-spacing: 0.0107142857em;
@@ -2528,6 +2680,7 @@ img {
   color: rgb(26, 115, 232);
 }
 
+/* Nhóm hiệu ứng ripple chung cho button/chip (sóng nước khi click) */
 .ripple--bounded {
   position: absolute;
   box-sizing: content-box;
@@ -2649,6 +2802,7 @@ img {
   margin-top: 4px;
 }
 
+/* Nhóm sao hiển thị (tĩnh) và sao tương tác trong rating/review */
 .star-rating,
 .rating-display__stars-wrapper,
 .review-rating__stars {
@@ -2725,6 +2879,7 @@ img {
   min-width: 160px;
 }
 
+/* Tuỳ chọn ripple theo từng kiểu button (primary, typography, rounded) */
 .button--theme-green .ripple--bounded {
   border-radius: 4px;
 }
@@ -2800,10 +2955,12 @@ img {
   background-color: #fff;
 }
 
+/* Biến thể button text màu sáng, dùng trên nền tối/ảnh */
 .button--text-light:not(:disabled) {
   color: #fff;
 }
 
+/* Utility hiển thị phần tử chỉ trên desktop và đẩy sang phải */
 .show-desktop-push-right {
   display: none;
 }
@@ -2852,6 +3009,7 @@ img {
   color: rgb(95, 99, 104);
 }
 
+/* Icon bên trong button (trước/sau label) */
 .button .button__icon {
   margin-left: 0;
   margin-right: 8px;
@@ -2878,6 +3036,7 @@ img {
   height: 1rem;
 }
 
+/* Hiển thị inline-flex trên mobile, ẩn trên desktop (ví dụ nút hành động) */
 .show-mobile-inline-flex {
   display: inline-flex;
 }
@@ -2894,6 +3053,7 @@ img {
   grid-template-columns: 1fr;
 }
 
+/* Padding bottom responsive cho các block nội dung (nhỏ -> lớn theo breakpoint) */
 .padding-bottom--responsive-medium {
   padding-bottom: 16px;
 }
@@ -2936,11 +3096,13 @@ img {
   color: rgb(32, 33, 36);
 }
 
+/* Sao hiển thị trong khối tổng quan rating (khác với sao tương tác) */
 .rating-display__star {
   height: 16px;
   width: 16px;
 }
 
+/* Icon sao khi ở trạng thái đã được chọn/filled */
 .star-rating__icon--filled {
   color: #cc8a45;
   fill: #cc8a45;
@@ -2951,12 +3113,14 @@ img {
   color: #cc8a45;
 }
 
+/* Thanh bar thể hiện phân bố số sao (5 sao, 4 sao,...) */
 .rating-bar {
   display: grid;
   grid-template-columns: max-content auto;
   align-items: center;
 }
 
+/* Label mô tả mức sao tương ứng cho mỗi hàng rating bar */
 .rating-bar__label {
   line-height: 1rem;
   font-size: 0.75rem;
@@ -2965,6 +3129,7 @@ img {
   padding-right: 16px;
 }
 
+/* Nền thanh rating bar (track) */
 .rating-bar__track {
   border-radius: 9999px;
   background-color: rgb(232, 234, 237);
@@ -2975,15 +3140,18 @@ img {
   background-color: rgb(232, 234, 237);
 }
 
+/* Phần progress đã lấp đầy trên thanh rating bar */
 .rating-bar__progress--filled {
   background-color: #cc8a45;
 }
 
+/* Lớp con dùng để fill phần progress bên trong track */
 .rating-bar__progress {
   height: 100%;
   border-radius: inherit;
 }
 
+/* Label hiển thị tổng số lượt đánh giá */
 .total-reviews-label {
   color: rgb(95, 99, 104);
   fill: rgb(95, 99, 104);
