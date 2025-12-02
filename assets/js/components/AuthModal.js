@@ -129,8 +129,6 @@ class AuthModal extends HTMLElement {
   align-items: center; /* Căn giữa dọc (khắc phục lỗi chữ bị lệch lên/xuống) */
   box-sizing: border-box; /* Đảm bảo padding không làm vỡ khung */
 }
-
-}
         /* ------------------- */
         
         .submit-btn:hover { background-color: #a36e3a; }
