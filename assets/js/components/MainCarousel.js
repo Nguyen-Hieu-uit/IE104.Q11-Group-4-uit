@@ -5,12 +5,14 @@ class MainCarousel extends HTMLElement {
   }
 
   render() {
+    // Sử dụng Template String để chứa HTML
     this.innerHTML = `
     <div class="app-section">
       <div class="carousel-wrapper">
         <div class="epic_carousel">
           <div class="carousel-section">
             <div class="carousel-body">
+
               <div class="carousel-main-slide-area">
                 <div class="carousel-aspect-box">
                   <div class="carousel-slide-fitter">
@@ -25,9 +27,11 @@ class MainCarousel extends HTMLElement {
                              <div class="slide-gradient-overlay"></div>
                           </div>
                         </a>
+
                         <div class="slide-info-box">
                           <div>
                              <div class="slide-promo-logo" style="background-image: url(https://cdn2.unrealengine.com/egs-anno-117-carousel-logo-350x100-e6cec3402b4e.png);"></div>
+                             
                              <div class="slide-description-wrapper">
                                 <div class="slide-text-content">
                                    <span class="text-base text-sale-tag text-color-primary">Xây dựng Đế Quốc La Mã của bạn!</span>
@@ -35,6 +39,7 @@ class MainCarousel extends HTMLElement {
                                 </div>
                              </div>
                           </div>
+
                           <div class="slide-offer-details">
                              <div class="slide-price-block">
                                 <div class="slide-price-container">
@@ -49,13 +54,11 @@ class MainCarousel extends HTMLElement {
                         </div>
                       </div>
                     </div>
-
                     <div class="carousel-slide">
                        <div class="slide-content-wrapper">
                           <a href="#" class="slide-link"><div class="slide-image-wrapper"><img src="https://cdn2.unrealengine.com/egs-fortnite-sidekicks-carousel-desktop-1920x1080-ab679c4d991d.jpg?resize=1&w=1280&h=720&quality=medium" class="slide-image"/><div class="slide-gradient-overlay"></div></div></a>
                           <div class="slide-info-box">
-                             <div class="slide-promo-logo"></div>
-                             <div class="slide-description-wrapper"><div class="slide-text-content"><span class="text-base text-sale-tag text-color-primary">Giảm giá 20%</span><span class="text-base text-description text-color-primary">Trải nghiệm lối chơi co-op hấp dẫn! Tiết kiệm khi mua Split Fiction từ 05/11 tới 11/11.</span></div></div>
+                             <div class="slide-promo-logo"></div> <div class="slide-description-wrapper"><div class="slide-text-content"><span class="text-base text-sale-tag text-color-primary">Giảm giá 20%</span><span class="text-base text-description text-color-primary">Trải nghiệm lối chơi co-op hấp dẫn! Tiết kiệm khi mua Split Fiction từ 05/11 tới 11/11.</span></div></div>
                               <div class="slide-offer-details"><div class="slide-price-block"><div class="slide-price-container"><div class="slide-price-segment"><div class="discount-badge-wrapper"><div class="discount-badge discount-badge--primary discount-badge--contained"><span class="discount-badge-text">-20%</span></div></div></div><div class="slide-price-segment"><div class="carousel-price-wrapper"><span class="carousel-price-text"><span class="discount-price">899.000&nbsp;₫</span>*</span></div><div class="carousel-price-wrapper"><span class="carousel-price-text">719.200&nbsp;₫</span></div></div></div></div><div class="app-actions slide-buttons"><div class="app-actions__install-wrapper"><div class="install-button-wrapper"><div class="install-component-wrapper"><div class="flex-container layout-col-to-row"><div><div class="button-wrapper"><div class="button__touch-wrapper"><button class="button button--theme-green button--contained button--typography button--padding-x-large focus-visible button--shape-rounded button--text-light button--sizing-responsive button--primary width-full-to-auto"><div class="ripple--bounded"></div><span class="button__label">Cài đặt</span></button></div></div></div></div></div></div></div></div></div>
                           </div>
                        </div>
@@ -83,6 +86,7 @@ class MainCarousel extends HTMLElement {
 
               <div class="carousel-nav-sidebar">
                 <ul class="carousel-nav-list">
+                  
                   <li class="carousel-nav-item active">
                     <div class="carousel-nav-button">
                        <div class="nav-button-image-wrapper"><div class="nav-image-aspect-box"><div class="carousel-slide-fitter"><img class="nav-button-image" src="https://cdn2.unrealengine.com/egs-anno-117-pax-romana-carousel-thumb-1200x1600-0394ee05489b.jpg?resize=1&w=96&h=128&quality=medium"/></div></div></div>
@@ -90,6 +94,7 @@ class MainCarousel extends HTMLElement {
                        <div class="nav-progress-bar"></div>
                     </div>
                   </li>
+
                   <li class="carousel-nav-item">
                     <div class="carousel-nav-button">
                        <div class="nav-button-image-wrapper"><div class="nav-image-aspect-box"><div class="carousel-slide-fitter"><img class="nav-button-image" src="https://cdn2.unrealengine.com/en-egs-honkai-star-rail-3-7-carousel-thumb-1200x1600-32d8a735e9ec.jpg?resize=1&w=96&h=128&quality=medium"/></div></div></div>
@@ -97,6 +102,7 @@ class MainCarousel extends HTMLElement {
                        <div class="nav-progress-bar"></div>
                     </div>
                   </li>
+
                   <li class="carousel-nav-item">
                     <div class="carousel-nav-button">
                        <div class="nav-button-image-wrapper"><div class="nav-image-aspect-box"><div class="carousel-slide-fitter"><img class="nav-button-image" src="https://cdn2.unrealengine.com/egs-where-winds-meet-carousel-thumb-3-1200x1600-b435eb16e45b.jpg?resize=1&w=96&h=128&quality=medium"/></div></div></div>
@@ -104,6 +110,7 @@ class MainCarousel extends HTMLElement {
                        <div class="nav-progress-bar"></div>
                     </div>
                   </li>
+
                   <li class="carousel-nav-item">
                     <div class="carousel-nav-button">
                        <div class="nav-button-image-wrapper"><div class="nav-image-aspect-box"><div class="carousel-slide-fitter"><img class="nav-button-image" src="https://cdn2.unrealengine.com/egs-marvel-rivals-season-5-thumb-1200x1600-49cd70c263ec.jpg?resize=1&w=96&h=128&quality=medium"/></div></div></div>
@@ -111,6 +118,7 @@ class MainCarousel extends HTMLElement {
                        <div class="nav-progress-bar"></div>
                     </div>
                   </li>
+
                   <li class="carousel-nav-item">
                     <div class="carousel-nav-button">
                        <div class="nav-button-image-wrapper"><div class="nav-image-aspect-box"><div class="carousel-slide-fitter"><img class="nav-button-image" src="https://cdn2.unrealengine.com/egs-split-fiction-carousel-thumb-1200x1600-9b5a96bf6479.jpg?resize=1&w=96&h=128&quality=medium"/></div></div></div>
@@ -118,6 +126,7 @@ class MainCarousel extends HTMLElement {
                        <div class="nav-progress-bar"></div>
                     </div>
                   </li>
+
                   <li class="carousel-nav-item">
                     <div class="carousel-nav-button">
                        <div class="nav-button-image-wrapper"><div class="nav-image-aspect-box"><div class="carousel-slide-fitter"><img class="nav-button-image" src="https://cdn2.unrealengine.com/egs-ride-6-carousel-thumb-1200x1600-488c39ac0678.jpg?resize=1&w=96&h=128&quality=medium"/></div></div></div>
