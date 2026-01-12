@@ -1,45 +1,22 @@
 /* --- script_setting.js --- */
 
-// --- DANH SÁCH QUỐC GIA (Giống AuthModal) ---
-function getCountries() {
-    return [
-        { code: "Vietnam", name: "Việt Nam" },
-        { code: "USA", name: "United States" },
-        { code: "UK", name: "United Kingdom" },
-        { code: "China", name: "中国" },
-        { code: "Japan", name: "日本" },
-        { code: "Korea", name: "한국" },
-        { code: "France", name: "France" },
-        { code: "Germany", name: "Deutschland" },
-        { code: "Russia", name: "Россия" },
-        { code: "Spain", name: "España" },
-    ];
-}
-
 // --- HÀM UPDATE DỮ LIỆU NGƯỜI DÙNG (LƯU VÀO STORAGE) ---
 function updateCurrentUser(key, value) {
-    // 1. Cập nhật phiên đăng nhập hiện tại
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!currentUser) return;
 
     currentUser[key] = value;
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
 
-    // 2. Cập nhật trong cơ sở dữ liệu giả lập (users_db)
-    // Để đảm bảo lần sau đăng nhập lại dữ liệu vẫn đúng
     let users = JSON.parse(localStorage.getItem('users_db') || '[]');
     const index = users.findIndex(u => u.username === currentUser.username);
-
     if (index !== -1) {
-        // Cập nhật thông tin cho user tìm thấy
         users[index] = currentUser;
         localStorage.setItem('users_db', JSON.stringify(users));
     }
-
-    console.log(`Đã cập nhật ${key}: ${value}`);
 }
 
-// --- HÀM XỬ LÝ SỰ KIỆN CHỈNH SỬA (EDIT CHO TEXT) ---
+// --- HÀM XỬ LÝ SỰ KIỆN CHỈNH SỬA (EDIT) ---
 async function handleEditClick(event) {
     const editButton = event.target.closest('.edit-btn');
     if (!editButton) return;
@@ -51,12 +28,9 @@ async function handleEditClick(event) {
 
     const labelText = labelElement.textContent.replace(':', '').trim();
     let dataKey = '';
-
-    // Mapping nhãn hiển thị sang key trong database
     if (labelText === 'Tên hiển thị') dataKey = 'username';
     if (labelText === 'Email') dataKey = 'email';
     if (labelText === 'Mật khẩu') dataKey = 'password';
-    if (labelText === 'Tên đầy đủ') dataKey = 'fullName';
 
     let currentValue = valueElement.textContent.trim();
     if (currentValue === '********') currentValue = '';
@@ -74,8 +48,7 @@ async function handleEditClick(event) {
 
         updateCurrentUser(dataKey, displayValue);
 
-        // Nếu sửa username, cần báo cho Header cập nhật lại tên ngay lập tức
-        if (dataKey === 'username' || dataKey === 'fullName') {
+        if (dataKey === 'username') {
             window.dispatchEvent(new Event('auth-change'));
         }
     }
@@ -108,7 +81,8 @@ function handleDeleteAccount() {
 
         localStorage.removeItem('currentUser');
         localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('theme');
+        localStorage.removeItem('selectedGender');
+        localStorage.removeItem('theme'); // Xóa luôn theme đã cài
 
         window.dispatchEvent(new Event('auth-change'));
         alert("Tài khoản đã bị xóa.");
@@ -116,12 +90,9 @@ function handleDeleteAccount() {
     }
 }
 
-// --- CUSTOM MODAL (CHO PHẦN SỬA TEXT) ---
+// --- CUSTOM MODAL ---
 let modalElement, modalInput, modalTitle;
 function createModalElements() {
-    const existingModal = document.getElementById('custom-modal-overlay');
-    if (existingModal) return; // Tránh tạo trùng
-
     const modalHtml = `
         <section id="custom-modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
             <div id="custom-modal-box" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.3); min-width:300px; max-width: 90%;">
@@ -145,32 +116,20 @@ async function showCustomPrompt(title, currentValue) {
         modalTitle.textContent = title;
         modalInput.value = currentValue;
         modalElement.style.display = 'block';
-        modalInput.focus();
-
         const okButton = document.getElementById('modal-ok');
         const cancelButton = document.getElementById('modal-cancel');
-
         const handleOk = () => { modalElement.style.display = 'none'; resolve(modalInput.value); cleanupListeners(); };
         const handleCancel = () => { modalElement.style.display = 'none'; resolve(null); cleanupListeners(); };
-
-        // Thêm xử lý phím Enter
-        const handleEnter = (e) => { if (e.key === 'Enter') handleOk(); };
-
         okButton.addEventListener('click', handleOk);
         cancelButton.addEventListener('click', handleCancel);
-        modalInput.addEventListener('keyup', handleEnter);
-
-        const cleanupListeners = () => {
-            okButton.removeEventListener('click', handleOk);
-            cancelButton.removeEventListener('click', handleCancel);
-            modalInput.removeEventListener('keyup', handleEnter);
-        };
+        const cleanupListeners = () => { okButton.removeEventListener('click', handleOk); cancelButton.removeEventListener('click', handleCancel); };
     });
 }
 
 // --- HÀM CHÍNH DỰNG HTML TỪ LOCAL STORAGE ---
 function loadSettingsFromStorage() {
     const container = document.getElementById("full-content-area");
+
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
     if (!currentUser) {
@@ -182,15 +141,14 @@ function loadSettingsFromStorage() {
         return;
     }
 
-    // Lấy dữ liệu hoặc đặt giá trị mặc định
     const username = currentUser.username || "N/A";
     const email = currentUser.email || "N/A";
     const fullName = currentUser.fullName || "N/A";
     const currentGender = currentUser.gender || "Khác";
-    const location = currentUser.location || ""; // Quốc gia
+    const location = currentUser.location || "N/A";
     const language = currentUser.language || "Tiếng Việt";
 
-    // Xử lý hiển thị nhóm tuổi
+    // Nhóm tuổi
     const ageValue = parseInt(currentUser.age, 10);
     let ageDisplay = "N/A";
     if (!isNaN(ageValue)) {
@@ -199,7 +157,6 @@ function loadSettingsFromStorage() {
         else ageDisplay = "18+";
     }
 
-    // Ẩn bớt email
     const emailDisplay = email.replace(/(.)(.+)(@)/, "$1****$3");
 
     // --- BUILD HTML ---
@@ -231,7 +188,6 @@ function loadSettingsFromStorage() {
         <section class="seamless-item">
             <p class="label-text">Tên đầy đủ:</p>
             <p class="value-text">${fullName}</p>
-            <button class="edit-btn">✎</button>
         </section>
         <section class="seamless-item">
             <p class="label-text">Nhóm tuổi:</p>
@@ -239,10 +195,8 @@ function loadSettingsFromStorage() {
         </section>
     `;
 
-    // Gender Select
     const isMaleActive = currentGender === "Nam" ? 'active' : '';
     const isFemaleActive = currentGender === "Nữ" ? 'active' : '';
-    const isOtherActive = currentGender === "Khác" ? 'active' : '';
 
     finalHtml += `
         <section class="seamless-item gender-select">
@@ -250,22 +204,10 @@ function loadSettingsFromStorage() {
             <p class="gender-options">
                 <button class="gender-btn ${isMaleActive}">Nam</button>
                 <button class="gender-btn ${isFemaleActive}">Nữ</button>
-                <button class="gender-btn ${isOtherActive}">Khác</button>
             </p>
         </section>
     `;
 
-    // --- PHẦN XỬ LÝ QUỐC GIA (DROPDOWN) ---
-    // Tạo danh sách option từ hàm getCountries
-    const countries = getCountries();
-    let countryOptionsHtml = `<option value="" disabled ${location === "" ? "selected" : ""}>Chọn quốc gia</option>`;
-
-    countries.forEach(c => {
-        const isSelected = c.name === location ? "selected" : "";
-        countryOptionsHtml += `<option value="${c.name}" ${isSelected}>${c.name}</option>`;
-    });
-
-    // Language Options
     const languageOptions = `
         <option value="Tiếng Việt" ${language === 'Tiếng Việt' ? 'selected' : ''}>Tiếng Việt</option>
         <option value="English" ${language === 'English' ? 'selected' : ''}>English</option>
@@ -278,9 +220,7 @@ function loadSettingsFromStorage() {
         </section>
         <section class="seamless-item">
             <p class="label-text">Quốc gia:</p>
-            <select class="select-control" id="country-select">
-                ${countryOptionsHtml}
-            </select>
+            <p class="value-text">${location}</p>
         </section>
     `;
 
@@ -308,33 +248,22 @@ function loadSettingsFromStorage() {
 
     container.innerHTML = finalHtml;
 
-    // --- GẮN SỰ KIỆN (LISTENERS) ---
+    // --- GẮN SỰ KIỆN ---
 
-    // 1. Sự kiện đổi Quốc gia
-    const countrySelect = document.getElementById('country-select');
-    if (countrySelect) {
-        countrySelect.addEventListener('change', (e) => {
-            updateCurrentUser('location', e.target.value);
-        });
-    }
-
-    // 2. Sự kiện đổi Ngôn ngữ
-    const langSelect = document.getElementById('lang-select');
-    if (langSelect) {
-        langSelect.addEventListener('change', (e) => {
-            updateCurrentUser('language', e.target.value);
-        });
-    }
-
-    // 3. Sự kiện đổi Theme
+    // Sự kiện Theme (Chủ đề) - ĐÃ SỬA LOGIC
     const themeSelect = document.getElementById('theme-select');
     if (themeSelect) {
         let storedTheme = localStorage.getItem('theme');
-        if (storedTheme !== 'Mùa') storedTheme = 'Thường';
 
+        // Kiểm tra chặt chẽ: Nếu không phải 'Mùa', mặc định hết về 'Thường'
+        if (storedTheme !== 'Mùa') {
+            storedTheme = 'Thường';
+        }
+
+        // Gán giá trị cho select
         themeSelect.value = storedTheme;
 
-        // Apply theme ngay khi load
+        // Kích hoạt hiệu ứng nếu là 'Mùa'
         if (typeof applyThemeEffects === 'function') {
             applyThemeEffects(storedTheme);
         }
@@ -342,7 +271,6 @@ function loadSettingsFromStorage() {
         themeSelect.addEventListener('change', (e) => {
             const newTheme = e.target.value;
             localStorage.setItem('theme', newTheme);
-            updateCurrentUser('theme', newTheme); // Lưu theme vào thông tin user luôn
 
             if (typeof applyThemeEffects === 'function') {
                 applyThemeEffects(newTheme);
@@ -350,7 +278,13 @@ function loadSettingsFromStorage() {
         });
     }
 
-    // 4. Sự kiện Xóa tài khoản
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+        langSelect.addEventListener('change', (e) => {
+            updateCurrentUser('language', e.target.value);
+        });
+    }
+
     const deleteBtn = document.getElementById('delete-acc-btn');
     if (deleteBtn) {
         deleteBtn.addEventListener('click', handleDeleteAccount);
@@ -360,13 +294,9 @@ function loadSettingsFromStorage() {
 // --- KHỞI TẠO ---
 document.addEventListener('DOMContentLoaded', () => {
     createModalElements();
-
-    // Uỷ quyền sự kiện cho các nút Edit và Gender (do HTML render động)
     document.addEventListener('click', handleGenderToggle);
     document.addEventListener('click', handleEditClick);
 
     loadSettingsFromStorage();
-
-    // Lắng nghe sự kiện auth-change để cập nhật lại giao diện nếu có thay đổi từ nơi khác
     window.addEventListener('auth-change', loadSettingsFromStorage);
 });
