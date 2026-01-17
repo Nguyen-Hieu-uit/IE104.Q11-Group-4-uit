@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Trên màn hình nhỏ (< 950px), nếu click ngoài vùng search__box thì
       // ẩn clear button và khôi phục icon kính lúp (backgroundImage)
-      if (window.innerWidth < 950) {
+      if (window.innerWidth < 950 && clickOutsideSuggestions) {
         clearButton.style.display = "none";
         inputElement.style.backgroundImage = "";
       }
